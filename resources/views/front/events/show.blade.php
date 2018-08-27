@@ -83,10 +83,8 @@
                     </figure>
             
                 </div>
-                <!--/Full width lightbox-->
         
             </div>
-            <!--/First column-->
     
         </div>
         <!--First row-->
