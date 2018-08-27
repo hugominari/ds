@@ -25,7 +25,6 @@
         </section>
         
         <section class="magazine-section my-5">
-                {{--<h2 class="h1-responsive font-weight-bold text-left my-5">Outros Eventos</h2>--}}
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="single-news mb-4 wow fadeInUp">
@@ -60,7 +59,7 @@
                                     </div>
                             
                                 </div>
-                                <!-- Grid column -->
+                   
                         
                             </div>
                             <!-- Grid row -->
