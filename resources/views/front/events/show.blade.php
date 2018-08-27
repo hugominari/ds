@@ -8,13 +8,11 @@
             <!-- Grid row -->
     
             <div class="light-font">
-                {{--<div class="bc-icons">--}}
-                    <ol class="breadcrumb blue-grey lighten-4">
-                        <li class="breadcrumb-item"><a class="black-text" href="{{ url('/') }}"><i class="fas fa-home"></i> Inicio</a></li>
-                        <li class="breadcrumb-item"><a class="black-text" href="{{ route('events') }}">Eventos</a></li>
-                        <li class="breadcrumb-item active">Title of the news</li>
-                    </ol>
-                {{--</div>--}}
+                <ol class="breadcrumb blue-grey lighten-4">
+                    <li class="breadcrumb-item"><a class="black-text" href="{{ url('/') }}"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="{{ route('events') }}">Eventos</a></li>
+                    <li class="breadcrumb-item active">Title of the news</li>
+                </ol>
             </div>
             
         </section>
