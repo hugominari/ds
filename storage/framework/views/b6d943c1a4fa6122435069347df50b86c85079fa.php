@@ -27,30 +27,9 @@
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <?php endif; ?>
-    
-        <div class="mb-0 mt-4">
-            <nav aria-label="pagination" class="float-right">
-                <?php echo e($cultures->links()); ?>
+        
+        <?php echo e($cultures->links('vendor.pagination.material')); ?>
 
-                
-                    
-                        
-                            
-                            
-                        
-                    
-                    
-                    
-                    
-                    
-                        
-                            
-                            
-                        
-                    
-                
-            </nav>
-        </div>
     
         <div class="clearfix"></div>
 

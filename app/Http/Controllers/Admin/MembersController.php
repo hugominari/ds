@@ -124,7 +124,7 @@ class MembersController extends Controller
 			$response->time = 3000;
 			$response->message = 'Membro cadastrado com sucesso';
 			$response->callback = 'redirect';
-			$response->url = route('members.show', ['id' => $member->id]);
+			$response->url = route('members.index');
 		}
 		catch(\Error $error)
 		{
@@ -195,6 +195,7 @@ class MembersController extends Controller
 			$response->message = 'Membro atualizado com sucesso';
 			$response->title = 'Sucesso:';
 			$response->callback = 'redirect';
+            $response->url = route('members.index');
 			$response->time = 3000;
 		}
 		catch(\Error $error)

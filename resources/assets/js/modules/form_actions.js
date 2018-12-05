@@ -4,7 +4,7 @@
 $(document).on("click", ".js-submit", function (e) {
     e.preventDefault();
     var submit = $(this);
-    var form = $('form.ajax-form');
+    var form = $(this).parents('form.ajax-form');
 
     if (Callbacks.preSubmit()) {
         //CLean errors

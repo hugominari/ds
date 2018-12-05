@@ -135,7 +135,7 @@ class UsersController extends Controller
 			$response->time = 3000;
 			$response->message = 'O usuario foi cadastrado com sucesso';
 			$response->callback = 'redirect';
-			$response->url = route('users.show', ['id' => $user->id]);
+			$response->url = route('users.index');
 		}
 		catch(\Error $error)
 		{
@@ -239,6 +239,7 @@ class UsersController extends Controller
 			$response->message = 'Usuario atualizado com sucesso!';
 			$response->title = 'Sucesso:';
 			$response->callback = 'redirect';
+            $response->url = route('users.index');
 			$response->time = 3000;
 		}
 		catch(\Error $error)
