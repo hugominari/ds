@@ -14,6 +14,7 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
@@ -127,6 +128,7 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Inflector\\' => 26,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\' => 16,
@@ -365,6 +367,10 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\DBAL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL',
+        ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
@@ -462,10 +468,6 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         ),
         'D' => 
         array (
-            'Doctrine\\DBAL\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/dbal/lib',
-            ),
             'Doctrine\\Common\\Lexer\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
@@ -521,11 +523,13 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\AttendanceRequest' => __DIR__ . '/../..' . '/app/Http/Requests/AttendanceRequest.php',
         'App\\Http\\Requests\\BasicRequest' => __DIR__ . '/../..' . '/app/Http/Requests/BasicRequest.php',
         'App\\Http\\Requests\\ContactRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ContactRequest.php',
         'App\\Http\\Requests\\CovenantRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CovenantRequest.php',
         'App\\Http\\Requests\\EventRequest' => __DIR__ . '/../..' . '/app/Http/Requests/EventRequest.php',
         'App\\Http\\Requests\\HistoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/HistoryRequest.php',
+        'App\\Http\\Requests\\MandatoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MandatoryRequest.php',
         'App\\Http\\Requests\\MemberRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MemberRequest.php',
         'App\\Http\\Requests\\NewsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/NewsRequest.php',
         'App\\Http\\Requests\\RulesRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RulesRequest.php',
@@ -546,6 +550,7 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         'App\\Models\\Base\\Event' => __DIR__ . '/../..' . '/app/Models/Base/Event.php',
         'App\\Models\\Base\\Feed' => __DIR__ . '/../..' . '/app/Models/Base/Feed.php',
         'App\\Models\\Base\\History' => __DIR__ . '/../..' . '/app/Models/Base/History.php',
+        'App\\Models\\Base\\Mandatory' => __DIR__ . '/../..' . '/app/Models/Base/Mandatory.php',
         'App\\Models\\Base\\Member' => __DIR__ . '/../..' . '/app/Models/Base/Member.php',
         'App\\Models\\Base\\MemberMandatory' => __DIR__ . '/../..' . '/app/Models/Base/MemberMandatory.php',
         'App\\Models\\Base\\Note' => __DIR__ . '/../..' . '/app/Models/Base/Note.php',
@@ -574,6 +579,7 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         'App\\Models\\Event' => __DIR__ . '/../..' . '/app/Models/Event.php',
         'App\\Models\\Feed' => __DIR__ . '/../..' . '/app/Models/Feed.php',
         'App\\Models\\History' => __DIR__ . '/../..' . '/app/Models/History.php',
+        'App\\Models\\Mandatory' => __DIR__ . '/../..' . '/app/Models/Mandatory.php',
         'App\\Models\\Member' => __DIR__ . '/../..' . '/app/Models/Member.php',
         'App\\Models\\MemberMandatory' => __DIR__ . '/../..' . '/app/Models/MemberMandatory.php',
         'App\\Models\\Note' => __DIR__ . '/../..' . '/app/Models/Note.php',
@@ -594,6 +600,7 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         'App\\Models\\TypeCall' => __DIR__ . '/../..' . '/app/Models/TypeCall.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Website' => __DIR__ . '/../..' . '/app/Models/Website.php',
+        'App\\Permission' => __DIR__ . '/../..' . '/app/Permission.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -601,6 +608,7 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\FormServiceProvider' => __DIR__ . '/../..' . '/app/Providers/FormServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Role' => __DIR__ . '/../..' . '/app/Role.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Appstract\\BladeDirectives\\BladeDirectivesServiceProvider' => __DIR__ . '/..' . '/appstract/laravel-blade-directives/src/BladeDirectivesServiceProvider.php',
         'Appstract\\BladeDirectives\\DirectivesRepository' => __DIR__ . '/..' . '/appstract/laravel-blade-directives/src/DirectivesRepository.php',
@@ -992,6 +1000,7 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         'Doctrine\\DBAL\\Driver\\AbstractDriverException' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractDriverException.php',
         'Doctrine\\DBAL\\Driver\\AbstractMySQLDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractMySQLDriver.php',
         'Doctrine\\DBAL\\Driver\\AbstractOracleDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractOracleDriver.php',
+        'Doctrine\\DBAL\\Driver\\AbstractOracleDriver\\EasyConnectString' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractOracleDriver/EasyConnectString.php',
         'Doctrine\\DBAL\\Driver\\AbstractPostgreSQLDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractPostgreSQLDriver.php',
         'Doctrine\\DBAL\\Driver\\AbstractSQLAnywhereDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLAnywhereDriver.php',
         'Doctrine\\DBAL\\Driver\\AbstractSQLServerDriver' => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL/Driver/AbstractSQLServerDriver.php',
@@ -1752,6 +1761,7 @@ class ComposerStaticInit8057d07ee08869f7911ff886a6428fd5
         'GuzzleHttp\\Psr7\\PumpStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/PumpStream.php',
         'GuzzleHttp\\Psr7\\Request' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Request.php',
         'GuzzleHttp\\Psr7\\Response' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Response.php',
+        'GuzzleHttp\\Psr7\\Rfc7230' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Rfc7230.php',
         'GuzzleHttp\\Psr7\\ServerRequest' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/ServerRequest.php',
         'GuzzleHttp\\Psr7\\Stream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Stream.php',
         'GuzzleHttp\\Psr7\\StreamDecoratorTrait' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/StreamDecoratorTrait.php',

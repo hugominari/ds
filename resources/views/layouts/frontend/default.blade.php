@@ -8,13 +8,13 @@ $timestamp = microtime(false);
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ config('app.name', 'Sindireceita - Brasîlia/DF') }}</title>
+        <title>Sindireceita - Brasîlia/DF</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('plugins/swiper/css/swiper.min.css') }}" rel="stylesheet">
         <link href="{{ asset('plugins/pace/themes/custom/pace-theme-flash.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/mdb.min.css?'. $timestamp) }}" rel="stylesheet">
+        <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/styles-frontend.min.css') }}" rel="stylesheet">
         <link href='https://api.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
     </head>

@@ -32,29 +32,32 @@ class Feed extends \App\Models\Base\Feed
     {
         try
         {
-            $xml = simplexml_load_file($this->url);
-            $entries = $xml->xpath("//item");
-    
-            $result = "<ul class='list-unstyled'>";
-    
-            foreach($entries as $qtd => $entry)
+            if(!empty($this->url))
             {
-                $time = strftime('%d/%m/%Y %H:%M', strtotime($entry->pubDate));
+                $xml = simplexml_load_file($this->url);
+                $entries = $xml->xpath("//item");
+    
+                $result = "<ul class='list-unstyled'>";
+    
+                foreach($entries as $qtd => $entry)
+                {
+                    $time = strftime('%d/%m/%Y %H:%M', strtotime($entry->pubDate));
         
-                $result .= "
-                <li>
-                    <a class='nav-link text-dark' href='{$entry->link}' target='_blank'>
-                        <small class='font-12'>{$time}</small> - {$entry->title}
-                    </a>
-                </li>";
+                    $result .= "
+                    <li>
+                        <a class='nav-link text-dark' href='{$entry->link}' target='_blank'>
+                            <small class='font-12'>{$time}</small> - {$entry->title}
+                        </a>
+                    </li>";
         
-                if($qtd > 2)
-                    break;
+                    if($qtd > 2)
+                        break;
+                }
+    
+                $result .= "</ul>";
+    
+                return $result;
             }
-    
-            $result .= "</ul>";
-    
-            return $result;
         }
         catch(\Error $ex)
         {

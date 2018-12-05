@@ -8,16 +8,15 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
 					@if(!empty($pinPost))
-						<div class="single-news mb-lg-0 mb-4">
-							<div class="view overlay rounded z-depth-1-half mb-4">
-								<img class="img-fluid heigth-250" src="{{ $pinPost->image->url_lg }}"
+						<div class="single-news mb-lg-0 mb-4 clickable cursor-pointer" data-href="{{ route('show.post', ['id' => $pinPost->id]) }}">
+							<div class="view overlay rounded z-depth-1-half mb-4 heigth-250">
+								<img class="img-fluid obj-fit" src="{{ $pinPost->image->url_lg }}"
 									 alt="{{ $pinPost->title }}">
-								<a>
-									<div class="mask rgba-white-slight waves-effect waves-light"></div>
-								</a>
+								
+								<div class="mask rgba-white-slight waves-effect waves-light"></div>
 							</div>
 							<div class="news-data d-flex justify-content-between">
-								<a href="#!" class="deep-orange-text"><h6 class="font-weight-bold">{!! $pinPost->tag !!}</h6></a>
+								<h6 class="font-weight-bold">{!! $pinPost->tag !!}</h6>
 								<p class="font-weight-bold dark-grey-text"><i
 											class="fa fa-clock-o pr-2"></i>{{ $pinPost->created_at->format('d/m/Y') }}
 								</p>
@@ -33,8 +32,8 @@
 							<div class="single-news mb-4 clickable cursor-pointer" data-href="{{ route('show.post', ['id' => $lastPost->id]) }}">
 								<div class="row">
 									<div class="col-md-3">
-										<div class="view overlay rounded z-depth-1 mb-4">
-											<img class="img-fluid" src="{{ $lastPost->image->url_sm }}"
+										<div class="view overlay rounded z-depth-1 mb-4 heigth-110">
+											<img class="img-fluid obj-fit" src="{{ $lastPost->image->url_sm }}"
 												 alt="{{ $lastPost->title }}">
 												<div class="mask rgba-white-slight waves-effect waves-light"></div>
 										</div>
@@ -66,21 +65,19 @@
 				<div class="col-md-6 wow fadeInLeft">
 					<div class="row mb-3">
 						<div class="col-12">
-							<a href="#!">
                             <span class="badge bg-yellow-dark">
                                 <i class="fas fa-rss mr-1"></i>Outras publicações
                             </span>
-							</a>
 						</div>
 					</div>
 					@if(!empty($lastPosts))
 						@foreach($lastPosts as $lastPost)
-							<div class="single-news mb-3">
+							<div class="single-news mb-3 clickable cursor-pointer" data-href="{{ route('show.post', ['id' => $lastPost->id]) }}">
 								<div class="d-flex justify-content-between">
 									<div class="col-11 text-truncate pl-0 mb-3">
-										<a>{{ $lastPost->title }}</a>
+										<small class="font-12">{{ $lastPost->created_at->format('d/m/Y') }}</small> - {{ $lastPost->title }}
 									</div>
-									<a><i class="fa fa-angle-double-right"></i></a>
+									<i class="fa fa-angle-double-right"></i>
 								</div>
 							</div>
 						@endforeach
@@ -94,8 +91,10 @@
 								<div class="single-news mb-3">
 									<div class="row mb-3">
 										<div class="col-12">
-											<a href="javascript:;"><span class="badge bg-blue"><i
-															class="fas fa-rss mr-1"></i>{{ $feed->name }}</span></a>
+											<span class="badge bg-blue">
+												<i class="fas fa-rss mr-1"></i>
+												{{ $feed->name }}
+											</span>
 										</div>
 									</div>
 								</div>

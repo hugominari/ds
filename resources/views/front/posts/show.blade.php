@@ -15,11 +15,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-cascade wider reverse">
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top heigth-300" src="{{ $post->image->url }}" alt="{{ $post->title }}">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
+                        <div class="view view-cascade overlay heigth-400">
+                            <img class="card-img-top obj-fit" src="{{ $post->image->url }}" alt="{{ $post->title }}">
+                            <div class="mask rgba-white-slight"></div>
                         </div>
                         <div class="card-body card-body-cascade text-center">
                             <h2 class="font-weight-bold"><a>{{ $post->title }}</a></h2>

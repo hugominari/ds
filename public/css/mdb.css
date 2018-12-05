@@ -37198,3 +37198,8 @@ table.dataTable tbody td {
   width: 100%;
   background: #F7F7F7;
 }
+
+.obj-fit {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
