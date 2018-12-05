@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 
 class EventsController extends Controller
 {
@@ -13,7 +14,20 @@ class EventsController extends Controller
      */
     public function index()
     {
-        return view('front.events.index');
+        $last = Event::query()
+            ->where('type', Event::TYPE_EVENT)
+            ->orderByDesc('date')
+            ->first();
+        
+        $others = Event::query()
+            ->where('type', Event::TYPE_EVENT)
+            ->orderByDesc('date')
+            ->when(!empty($last), function($query) use($last){
+                return $query->where('id', '<>', $last->id);
+            })
+            ->paginate(6);
+        
+        return view('front.events.index', compact(['last', 'others']));
     }
 	
 	
@@ -22,8 +36,10 @@ class EventsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show()
+	public function show($id = null)
 	{
-		return view('front.events.show');
+	    $event = Event::findOrFail($id);
+	    
+		return view('front.events.show', compact('event'));
 	}
 }

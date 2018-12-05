@@ -4,21 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
-    <!-- Styles -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles-backend.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -41,12 +34,9 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="btn btn-light btn-sm" href="{{ route('login') }}">{{ __('Login') }}</a>--}}
+                            {{--</li>--}}
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -71,9 +61,15 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
+        
+        
+        <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('plugins/mdb/popper.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('plugins/mdb/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('plugins/mdb/mdb.min.js') }}"></script>
     </div>
 </body>
 </html>

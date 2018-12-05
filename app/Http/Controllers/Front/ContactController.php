@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Social;
 
 class ContactController extends Controller
 {
@@ -13,6 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('front.contact');
+        $socials = Social::all();
+        return view('front.contact', compact(['socials']));
     }
 }

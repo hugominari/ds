@@ -1,31 +1,22 @@
-@extends('layouts.frontend')
-
+@extends('layouts.frontend.default')
 @section('content')
     <div class="container">
         <section class="my-5">
-            <!-- Section heading -->
-            <h2 class="h1-responsive font-weight-bold text-left my-5 ">Evento: Title of the news</h2>
-            <!-- Grid row -->
-    
+            <h2 class="h1-responsive font-weight-bold text-left">Evento: {{ $event->title }}</h2>
+            
             <div class="light-font">
                 <ol class="breadcrumb blue-grey lighten-4">
                     <li class="breadcrumb-item"><a class="black-text" href="{{ url('/') }}"><i class="fas fa-home"></i> Inicio</a></li>
                     <li class="breadcrumb-item"><a class="black-text" href="{{ route('events') }}">Eventos</a></li>
-                    <li class="breadcrumb-item active">Title of the news</li>
+                    <li class="breadcrumb-item active">{{ $event->title }}</li>
                 </ol>
             </div>
-            
+            {!! $event->description !!}
         </section>
         
-        <!--First row-->
         <div class="row m-t--35">
-        
-            <!--First column-->
             <div class="col-md-12">
-            
                 <div id="mdb-lightbox-ui"></div>
-            
-                <!--Full width lightbox-->
                 <div class="mdb-lightbox">
                 
                     <figure class="col-md-4">
@@ -83,12 +74,7 @@
                     </figure>
             
                 </div>
-        
             </div>
-    
         </div>
-        <!--First row-->
     </div>
-
-    
 @endsection

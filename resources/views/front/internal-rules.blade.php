@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.frontend.default')
 
 @section('content')
     <div class="container">
@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="view overlay">
-                            <object data="http://www.sindireceita-df.org.br/site/wp-content/uploads/2009/06/regimento-interno-ds-df-pdf.pdf" type="application/pdf" width="100%" height="74%" style="height: 74vh">
+                            <object data="{{ $file->url }}" type="application/pdf" width="100%" height="74%" style="height: 74vh">
                                 <blockquote class="blockquote bq-danger">
                                     <p class="font-weight-bold">
                                         Parece que seu navagador não suporta a leitura direta do arquivo PDF!
@@ -22,7 +22,7 @@
                                 </blockquote>
                             </object>
                         </div>
-                        <a href="http://www.sindireceita-df.org.br/site/wp-content/uploads/2009/06/regimento-interno-ds-df-pdf.pdf" target="_blank">
+                        <a href="{{ $file->url }}" target="_blank">
                             <button class="btn btn-outline-grey ml-0">
                                 <i class="fas fa-cloud-download-alt pr-2"></i>
                                 Fazer Download do arquivo

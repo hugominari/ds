@@ -1,5 +1,4 @@
-@extends('layouts.frontend')
-
+@extends('layouts.frontend.default')
 @section('content')
 	<div class="container">
 		<section class="team-section text-left my-5 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">

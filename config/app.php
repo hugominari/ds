@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Sao_Paulo',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt_BR',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'pt_BR',
 
     /*
     |--------------------------------------------------------------------------
@@ -151,7 +151,11 @@ return [
          * Package Service Providers...
          */
         Collective\Html\HtmlServiceProvider::class,
-        
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        Lavary\Menu\ServiceProvider::class,
+        Laratrust\LaratrustServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -161,6 +165,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
+        App\Providers\FormServiceProvider::class,
 
     ],
 
@@ -213,7 +219,9 @@ return [
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
+        'Menu' => Lavary\Menu\Facade::class,
+        'Laratrust'   => Laratrust\LaratrustFacade::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
     ],
 
 ];

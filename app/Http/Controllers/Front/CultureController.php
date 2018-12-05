@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 
 class CultureController extends Controller
 {
@@ -13,6 +14,7 @@ class CultureController extends Controller
      */
     public function index()
     {
-        return view('front.culture');
+        $cultures = Event::query()->where('type', Event::TYPE_CULTURES)->paginate(4);
+        return view('front.culture', compact(['cultures']));
     }
 }

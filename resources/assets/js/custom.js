@@ -31,6 +31,124 @@ $(function () {
 
 
 
+/**
+ * Function to send the form with ajax.
+ */
+$(document).on("click", ".js-submit-form", function (e) {
+  e.preventDefault();
+  var submit = $(this);
+  var form = $('form.ajax-form');
+  
+  alert('11');
+  
+  if (Callbacks.preSubmit()) {
+    //CLean errors
+    $('.form-group').removeClass('has-error').find('span.text-danger').remove();
+    
+    if (submit.hasClass('block-body')) {
+      blockUI('body');
+    } else {
+      submit
+      .attr('disabled', true)
+      .attr('old-html', submit.html())
+      .html('<i class="fa fa-spin fa-spinner"></i>' + (submit.hasClass('js-submit-icon-only') ? '' : ' Aguarde'));
+    }
+    
+    //Send form
+    $.ajax({
+      dataType: 'json',
+      type: 'POST',
+      url: form.attr("action"),
+      data: Callbacks.serializeData(form.serializeArray()),
+      success: function (data) {
+        var original = data.original;
+        
+        if (original)
+          data = original;
+        
+        if (data.success) {
+         if (!!data.message)
+            generateNotify(data.title, data.message, data.type);
+        }
+      },
+      error: function (jqXhr, json, errorThrown) {
+        //Get errors
+        var response = jqXhr.responseJSON;
+        
+        if (!!response) {
+          response = response.errors;
+          
+          //Display errors on inputs
+          $.each(response, function (index, value) {
+            var input = $('#' + index);
+            
+            if (input.length < 1)
+              input = $('[name=' + index + ']');
+            
+            var boxError = input.parents('.form-group');
+            var type = input.attr('type');
+
+            boxError.addClass('has-error');
+            
+            //Inputs Hidden
+            if (input.hasClass('hide') || !!input.attr('data-error')) {
+              var elementError = input.attr('data-error');
+              
+              if (elementError)
+                $(elementError).css('border-color', 'red');
+            }
+            
+						boxError.append(
+								'<span class="text-danger d-block">'
+								+ '<i class="fa fa-exclamation-circle m-r-5" aria-hidden="true"></i>'
+								+ value
+								+ '</span>'
+						);
+          
+          });
+          
+          //Focus input error an scroll to
+          var haveError = $('.has-error').length;
+          
+          if (haveError > 0) {
+            var firstInputError = $(".has-error").first();
+            
+            firstInputError.find(':input:not(select)').focus();
+            
+            $('html, body').animate({
+              scrollTop: firstInputError.offset().top - 80
+            }, 1000);
+          }
+        }
+        
+        //Unblock
+        if (submit.hasClass('block-body')) {
+          unblockUI('body');
+        } else {
+          submit
+          .attr('disabled', false)
+          .html(submit.attr('old-html'));
+        }
+      },
+      complete: function () {
+        //Unblock
+        if (submit.hasClass('block-body')) {
+          unblockUI('body');
+        } else {
+          submit
+          .attr('disabled', false)
+          .html(submit.attr('old-html'));
+        }
+      }
+    });
+    
+    Callbacks.postSubmit();
+  }
+});
+
+
+
+
 new WOW().init();
 
 // Tooltips Initialization

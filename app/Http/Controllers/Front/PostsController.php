@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 
 class PostsController extends Controller
 {
@@ -13,7 +14,30 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('front.posts.index');
+        $queryPosts = Post::query()
+            ->orderByDesc('created_at')
+            ->take(2);
+        
+        $pinPosts = $queryPosts->get();
+        
+        $ids = $queryPosts->select('id')
+            ->get()
+            ->makeHidden(['image', 'type_text', 'tag', 'resume'])
+            ->toArray();
+        
+        $lastPosts = Post::query()
+            ->when(!empty($ids), function($query) use($ids){
+                return $query->whereNotIn('id', $ids);
+            })
+            ->orderByDesc('created_at')
+            ->paginate(6);
+        
+        $data = [
+            'pinPosts',
+            'lastPosts',
+        ];
+
+        return view('front.posts.index', compact($data));
     }
 	
 	
@@ -22,8 +46,9 @@ class PostsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show()
+	public function show($id)
 	{
-		return view('front.posts.show');
+	    $post = Post::findOrFail($id);
+		return view('front.posts.show', compact(['post']));
 	}
 }
