@@ -30,6 +30,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 class Mandatory extends Eloquent
 {
 	protected $table = 'mandatory';
+	
 	public $timestamps = false;
 
 	protected $dates = [

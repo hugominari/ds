@@ -114,4 +114,24 @@ class Event extends \App\Models\Base\Event
     {
         return $this->type == self::TYPE_CULTURES;
     }
+    
+    public function getAlbum()
+    {
+        $folder = ($this->type == self::TYPE_CULTURES) ? 'cultures' : 'events';
+        $default = new DefaultController();
+        $path = "public/{$folder}/{$this->id}/album";
+        $album = [];
+    
+        $files = $default->findFile($path, 'album_pho*', false, '/^((?!thumb).)*$/');
+        
+        if(!empty($files))
+        {
+            foreach ($files as $file)
+            {
+                $album[] = $default->getFile($file->path, $file->filename);
+            }
+        }
+        
+        return $album;
+    }
 }

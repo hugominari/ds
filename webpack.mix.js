@@ -21,15 +21,15 @@ mix.sass('resources/assets/sass/custom/styles-backend.scss', 'public/css').minif
 mix.sass('resources/assets/sass/custom/styles-frontend.scss', 'public/css').minify('public/css/styles-frontend.css');
 
 //Minify resources JS
-mix.copy('resources/assets/js/backend/scripts-backend.js', 'public/js/scripts-backend.js')
-	.copy('resources/assets/js/frontend/scripts-frontend.js', 'public/js/scripts-frontend.js')
+mix.babel('resources/assets/js/backend/scripts-backend.js', 'public/js/scripts-backend.js')
+	.babel('resources/assets/js/frontend/scripts-frontend.js', 'public/js/scripts-frontend.js')
 	.minify([
 		'public/js/scripts-backend.js',
 		'public/js/scripts-frontend.js',
 	]);
 
 //Combine modules JS
-mix.combine([
+mix.babel([
 	'resources/assets/js/modules/ajax.js',
 	'resources/assets/js/modules/mask.js',
 	'resources/assets/js/modules/modal.js',
@@ -42,7 +42,7 @@ mix.combine([
 ], 'public/js/modules.js').minify('public/js/modules.js');
 
 //Combine libs JS
-mix.combine([
+mix.babel([
 	'resources/assets/js/libs/*'
 ], 'public/js/lib.js').minify('public/js/lib.js');
 
@@ -55,9 +55,9 @@ mix.combine([
 
 
 //Minify pages JS
-mix.copy('resources/assets/js/pages/basic.js', 'public/js/pages/basic.js')
-	.copy('resources/assets/js/pages/user.js', 'public/js/pages/user.js')
-	.copy('resources/assets/js/pages/mandatory.js', 'public/js/pages/mandatory.js')
+mix.babel('resources/assets/js/pages/basic.js', 'public/js/pages/basic.js')
+	.babel('resources/assets/js/pages/user.js', 'public/js/pages/user.js')
+	.babel('resources/assets/js/pages/mandatory.js', 'public/js/pages/mandatory.js')
 	.minify([
 		'public/js/pages/basic.js',
 		'public/js/pages/user.js',

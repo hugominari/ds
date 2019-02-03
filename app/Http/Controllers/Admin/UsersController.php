@@ -300,7 +300,7 @@ class UsersController extends Controller
 			$userId = $request->user_id;
 			$permissions = Role::findOrFail($roleId)->permissions;
 			$data = [];
-			
+
 			if(empty($userId))
 			{
 				foreach($permissions as $key => $permission)
@@ -311,14 +311,11 @@ class UsersController extends Controller
 						$data[$key]['name'] = $permission->display_name;
 						$data[$key]['selected'] = PermissionUser::query()->where('user_id', '=', $userId)->where('permission_id', '=', $permission->id)->count();
 					}
-					
 				}
 			}
 			else
 			{
-				
 				$permissionsUser = PermissionUser::whereUserId($userId)->select('permission_id')->get()->toArray();
-				
 				$dataPermission = array();
 				
 				foreach($permissionsUser as $permissionUser)
@@ -330,11 +327,7 @@ class UsersController extends Controller
 					{
 						$data[$key]['id'] = $permission->id;
 						$data[$key]['name'] = $permission->display_name;
-						
-						if(in_array($permission->id, $dataPermission))
-							$data[$key]['selected'] = true;
-						else
-							$data[$key]['selected'] = false;
+                        $data[$key]['selected'] = in_array($permission->id, $dataPermission);
 					}
 				}
 			}

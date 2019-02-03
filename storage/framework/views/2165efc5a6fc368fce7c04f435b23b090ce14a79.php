@@ -17,7 +17,7 @@
 		</div>
 	</section>
 	
-	<?php echo Form::open(['route' => ['users.update', $user->id], 'method' => 'PUT', 'class' => 'ajax-form']); ?>
+	<?php echo Form::open(['route' => ['users.update', $user->id], 'method' => 'PUT', 'class' => 'ajax-form', 'data-id' => $user->id]); ?>
 
 		<div class="row">
 		    <div class="col-md-4">

@@ -24,6 +24,7 @@ function generateNotify(title, message, type, link, from, align, delay)
 	var icon        = 'fa ';
 	var actions     = $('.js-fixed-actions').length || null;
 	var y           = (!!actions) ? 75 : 10;
+	var time				= delay || 5000;
 	
 	//Trait new vars
 	switch(type)
@@ -50,12 +51,12 @@ function generateNotify(title, message, type, link, from, align, delay)
 		"debug": false,
 		"newestOnTop": true,
 		"progressBar": true,
-		"positionClass": "toast-top-right",
+		"positionClass": "md-toast-" + from + '-' + align,
 		"preventDuplicates": true,
 		"onclick": null,
-		"showDuration": 300,
+		"showDuration": 500,
 		"hideDuration": 1000,
-		"timeOut": delay || 5000,
+		"timeOut": time,
 		"extendedTimeOut": 1000,
 		"showEasing": "swing",
 		"hideEasing": "linear",

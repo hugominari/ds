@@ -48,8 +48,8 @@ try
 			if(!!input.data('options'))
 			{
 				input
-					.select2({data : input.data('options')});
-					// .select2('open').trigger('change');
+					.select2({data : input.data('options')})
+					.select2('open').trigger('change');
 			}
 			
 			//On change, populate second

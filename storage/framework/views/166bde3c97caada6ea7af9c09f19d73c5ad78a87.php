@@ -44,19 +44,19 @@
 					</ul>
 				</div>
 			</li>
-			
-					
-				
-					
-						
-								
-						
-						
-								
-						
-					
-				
-			
+			<li class=""><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chair"></i>
+					Mandatos<i class="fa fa-angle-down rotate-icon"></i></a>
+				<div class="collapsible-body" style="display: none;">
+					<ul>
+						<li><a href="<?php echo e(route('mandatory.index')); ?>" class="waves-effect">Ver
+								todos</a>
+						</li>
+						<li><a href="<?php echo e(route('mandatory.create')); ?>" class="waves-effect">Criar
+								novo</a>
+						</li>
+					</ul>
+				</div>
+			</li>
 			<li class=""><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-bullhorn"></i>
 					Publicações<i class="fa fa-angle-down rotate-icon"></i></a>
 				<div class="collapsible-body" style="display: none;">

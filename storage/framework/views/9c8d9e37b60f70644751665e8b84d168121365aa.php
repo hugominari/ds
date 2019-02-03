@@ -7,8 +7,8 @@
 					<?php $__currentLoopData = $pinPosts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pinPost): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 						<div class="col-lg-6 col-md-12">
 							<div class="single-news mb-4 wow fadeIn clickable cursor-pointer" data-href="<?php echo e(route('show.post', ['id' => $pinPost->id])); ?>">
-								<div class="view overlay rounded z-depth-1-half mb-4">
-									<img class="img-fluid heigth-260" src="<?php echo e($pinPost->image->url_lg); ?>"
+								<div class="view overlay rounded z-depth-1-half mb-4 heigth-260">
+									<img class="img-fluid obj-fit" src="<?php echo e($pinPost->image->url_lg); ?>"
 										 alt="<?php echo e($pinPost->title); ?>">
 										<div class="mask rgba-white-slight waves-effect waves-light"></div>
 								</div>
@@ -38,7 +38,7 @@
 							<div class="row">
 								<div class="col-md-3">
 									<div class="view overlay rounded z-depth-1 mb-4">
-										<img class="img-fluid"
+										<img class="img-fluid obj-fit"
 											 src="<?php echo e($lastPost->image->url_sm); ?>"
 											 alt="<?php echo e($lastPost->title); ?>">
 										<div class="mask rgba-white-slight waves-effect waves-light"></div>

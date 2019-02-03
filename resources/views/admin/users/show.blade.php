@@ -18,7 +18,7 @@
 		</div>
 	</section>
 	
-	{!! Form::open(['url' => 'javascript:;', 'method' => 'GET', 'class' => 'ajax-form']) !!}
+	{!! Form::open(['url' => 'javascript:;', 'method' => 'GET', 'class' => 'ajax-form', 'data-id' => $user->id]) !!}
 		<div class="row">
 		    <div class="col-md-4">
 				<div class="card">
@@ -76,16 +76,6 @@
 							<input name="permissions" type="hidden" id="permissions">
 						</div>
 						<div class="box-body permissions-box" data-source="{{ route('users.load-permissions') }}">
-							{{--@if(!empty($permissions))--}}
-							{{--@foreach($permissions as $permission)--}}
-							{{--<div class="switch w-r-45 float-left">--}}
-							{{--<label>--}}
-							{{--<input type="checkbox" name="permissions[]" id="perm{{ $permission->id }}" value="">--}}
-							{{--<span class="lever"></span> {{ $permission->permission->display_name }}--}}
-							{{--</label>--}}
-							{{--</div>--}}
-							{{--@endforeach--}}
-							{{--@endif--}}
 						</div>
 					</div>
 				</div>

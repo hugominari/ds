@@ -32,9 +32,9 @@
 						<table class="table table-striped" cellspacing="0" width="100%" data-source="<?php echo e(route('mandatory.list')); ?>" data-type="datatables">
 							<thead>
 								<tr>
+									<th data-slug="name" class="th-sm sort">Nome</th>
 									<th data-slug="date_start" class="th-sm sort default-sort">Início</th>
 									<th data-slug="date_end" class="th-sm">Término</th>
-									<th data-slug="members" class="th-sm">Membros</th>
 									<th data-slug="action" class="th-sm no-sort width-150">Ações</th>
 								</tr>
 							</thead>

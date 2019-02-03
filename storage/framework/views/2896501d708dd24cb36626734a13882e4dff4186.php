@@ -73,7 +73,7 @@
                                         <?php if(!empty($socials)): ?>
                                             <?php $__currentLoopData = $socials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $social): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <li class="list-inline-item">
-                                                    <a class="p-2 fa-lg tw-ic" href="<?php echo e($social->url); ?>">
+                                                    <a class="p-2 fa-lg tw-ic" href="<?php echo e($social->url); ?>" target="_blank">
                                                         <i class="fab fa-<?php echo e($social->icon); ?> font-24"></i>
                                                     </a>
                                                 </li>

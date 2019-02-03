@@ -108,7 +108,6 @@ class MandatoryController extends Controller
                 $memberMandatory->save();
             }
             
-            
 			$response->success = true;
 			$response->type = 'success';
 			$response->time = 3000;
@@ -147,26 +146,30 @@ class MandatoryController extends Controller
 	 */
 	public function edit($id, $showOnly = false)
 	{
-		// $member = Member::findOrFail($id);
-        //
-		// $type = '1';
-        //
-		// $birthDate = !empty($member->birth_date) ? $member->birth_date->format('d/m/Y') : '';
-        // $title = $type == 'directors' ? 'de Diretoria' : 'de Coselho Fiscal';
-        // $icon = $type == 'directors' ? 'fas fa-briefcase' : 'fas fa-hand-holding-usd';
-        // $positions = Position::toSelect();
-		// $page = $showOnly ? 'show' : 'edit';
-        //
-		// $data = [
-		// 	'member',
-		// 	'birthDate',
-		// 	'positions',
-		// 	'icon',
-		// 	'type',
-		// 	'title',
-		// ];
-        //
-		// return view("admin.members.{$page}", compact($data));
+        $positions = Position::toSelect();
+        $positionsDirectors = Position::whereType(Position::TYPE_DIRECTORS)->get();
+        $positionsFiscals = Position::whereType(Position::TYPE_FISCALS)->get();
+        $page = $showOnly ? 'show' : 'edit';
+        
+        $mandatory = Mandatory::findOrFail($id);
+        
+        $directors = $mandatory->getDirectors(false, true);
+        $fiscals = $mandatory->getFiscals(false, true);
+        
+        $except = $mandatory->getMembersIds();
+        $members = Member::query()->whereNotIn('id', $except);
+        
+        $data = [
+            'positions',
+            'positionsDirectors',
+            'positionsFiscals',
+            'members',
+            'mandatory',
+            'directors',
+            'fiscals',
+        ];
+        
+		return view("admin.mandatory.{$page}", compact($data));
 	}
 	
 	/**
@@ -176,30 +179,57 @@ class MandatoryController extends Controller
 	 * @param  int                      $id
 	 * @return \Illuminate\Http\JsonResponse
 	 */
-	public function update(MemberRequest $request, $id)
+	public function update(MandatoryRequest $request, $id)
 	{
 		$response = $this->createResult();
-	
-		// try
-		// {
-		// 	$member = Member::findOrFail($id);
-        //
-		// 	//Save image profie
-		// 	$this->saveFile($request->image, "public/members/{$member->id}", 'profile');
-        //
-		// 	$response->success = true;
-		// 	$response->type = 'success';
-		// 	$response->message = 'Membro atualizado com sucesso';
-		// 	$response->title = 'Sucesso:';
-		// 	$response->callback = 'redirect';
-		// 	$response->time = 3000;
-		// }
-		// catch(\Error $error)
-		// {
-		// 	$response->message = Controller::DATABASE_ERROR;
-		// 	$response->type = 'error';
-		// 	Log::error($error->getMessage() . " | Linha: {$error->getLine()}");
-		// }
+		
+        try
+        {
+            $mandatory = Mandatory::findOrFail($id);
+            $mandatory->name = $request->name;
+            $mandatory->date_start = $request->date_start;
+            $mandatory->date_end = $request->date_end;
+            $mandatory->save();
+            
+            $directors = json_decode($request->directors);
+            $fiscals = json_decode($request->fiscals);
+            
+            $mandatory->releaseMemberMandatory();
+            
+            // Directors
+            foreach ($directors as $director)
+            {
+                $memberMandatory = new MemberMandatory();
+                $memberMandatory->mandatory_id = $mandatory->id;
+                $memberMandatory->member_id = $director->member_id;
+                $memberMandatory->position_id = $director->position_id;
+                $memberMandatory->save();
+            }
+            
+            // Fiscals
+            foreach ($fiscals as $fiscal)
+            {
+                $memberMandatory = new MemberMandatory();
+                $memberMandatory->mandatory_id = $mandatory->id;
+                $memberMandatory->member_id = $fiscal->member_id;
+                $memberMandatory->position_id = $fiscal->position_id;
+                $memberMandatory->save();
+            }
+            
+            $response->success = true;
+            $response->type = 'success';
+            $response->time = 3000;
+            $response->title = 'Sucesso: ';
+            $response->message = 'Mandato atualizado com sucesso';
+            $response->callback = 'redirect';
+            $response->url = route('mandatory.index');
+        }
+        catch(\Error $error)
+        {
+            $response->message = Controller::DATABASE_ERROR;
+            $response->type = 'error';
+            Log::error($error->getMessage() . " | Linha: {$error->getLine()}");
+        }
 	
 		return Response::json($response);
 	}
@@ -249,10 +279,14 @@ class MandatoryController extends Controller
 			
 			// Return to dataTables value.
 			return DataTables::of($mandatories)
-				->addColumn('members', function(Mandatory $mandatory)
-				{
-					return 0;
-				})
+                ->editColumn('date_start', function(Mandatory $mandatory)
+                {
+                    return $mandatory->date_start->format('d/m/Y');
+                })
+                ->editColumn('date_end', function(Mandatory $mandatory)
+                {
+                    return $mandatory->date_end->format('d/m/Y');
+                })
 				->addColumn('action', function(Mandatory $mandatory)
 				{
 					$data = $mandatory;
@@ -270,7 +304,7 @@ class MandatoryController extends Controller
 					
 					return view('layouts.datatables.actions', compact(['data', 'actions', 'havePermission']))->render();
 				})
-				->rawColumns(['action'])
+				->rawColumns(['action', 'diretors', 'fiscals'])
 				->make(true);
 		}
 		catch(\Error $error)

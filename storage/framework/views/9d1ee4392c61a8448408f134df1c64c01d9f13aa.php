@@ -12,7 +12,7 @@
 		</div>
 	</section>
 	
-	<?php echo Form::open(['url' => 'javascript:;', 'method' => 'POST', 'class' => 'ajax-form']); ?>
+	<?php echo Form::open(['url' => 'javascript:;']); ?>
 
 		<div class="row">
 		    <div class="col-md-4">
@@ -25,7 +25,7 @@
 						</p>
 					</div>
 					<div class="card-body">
-						<?php echo e(Form::cDropzone('image', $event->image, '', '1', 'Clique ou arraste uma imagem aqui', 'drop-square w-r-100')); ?>
+						<?php echo e(Form::cDropzone('image', $event->image, '', '1', 'Selecione uma imagem', 'drop-square w-r-100 disabled')); ?>
 
  					</div>
 				</div>
@@ -58,8 +58,31 @@
 				</div>
 		    </div>
 		</div>
+	
 	<?php echo Form::close(); ?>
 
+	
+	<div class="row mt-4">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					Fotos do evento
+				</div>
+				<div class="card-body">
+					<div class="box-dz-multiples">
+						<?php if(!empty($albumPhotos)): ?>
+							<?php $__currentLoopData = $albumPhotos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $albumPhoto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<?php echo e(Form::cDropzone('album', $albumPhoto, '', '1', 'Adicionar foto', 'drop-square pull-left mx-1 my-1 w-r-24 disabled', 'image/*')); ?>
+
+							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+						<?php else: ?>
+							<p>Nenhuma foto foi anexada!</p>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 <?php $__env->stopSection(); ?>
 

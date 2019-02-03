@@ -25,8 +25,18 @@
 						</p>
 					</div>
 					<div class="card-body">
-						<?php echo e(Form::cDropzone('image', $event->image, '', '1', 'Clique ou arraste uma imagem aqui', 'drop-square w-r-100')); ?>
+						<?php echo e(Form::cDropzone('image', $event->image, '', '1', 'Selecione uma imagem', 'drop-square w-r-100')); ?>
 
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						Album
+					</div>
+					<div class="card-body">
+						<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#addAlbum">
+							Adicionar album
+						</button>
 					</div>
 				</div>
 			</div>
@@ -54,6 +64,34 @@
 
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<!-- Modal -->
+		<div class="modal fade right" id="addAlbum" tabindex="-1" role="dialog" aria-labelledby="addAlbumLabel" aria-hidden="true">
+			<div class="modal-dialog modal-frame modal-bottom modal-notify" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="addAlbumLabel">Album do evento</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="box-body box-dz-multiples">
+							<?php $__currentLoopData = $albumPhotos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $albumPhoto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<?php echo e(Form::cDropzone('album', $albumPhoto, '', '1', 'Adicionar foto', 'drop-square dz-multiple pull-left mx-1 my-1', 'image/*')); ?>
+
+							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+							
+							<?php echo e(Form::cDropzone('album', '', '', '1', 'Adicionar foto', 'drop-square dz-multiple pull-left mx-1 my-1', 'image/*')); ?>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Concluir</button>
 					</div>
 				</div>
 			</div>

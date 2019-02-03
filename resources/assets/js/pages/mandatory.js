@@ -1,3 +1,23 @@
+try
+{
+  $('#box-members, #box-positions .connectedSortable').sortable({
+    connectWith: '.connectedSortable',
+    opacity: 0.5,
+  }).disableSelection();
+  
+  $("#box-positions .connectedSortable").on("sortreceive", function(event, ui) {
+    var $list = $(this);
+    
+    if ($list.children().length > 1) {
+      $(ui.sender).sortable('cancel');
+    }
+  });
+}
+catch (e)
+{
+  console.log('asd');
+}
+
 /**
  *
  */
@@ -48,11 +68,11 @@ Callbacks.preSubmit = function()
   let $hasDirectors = ($qtdDirectors > $ctrDirectors);
   let $hasFicals = ($qtdFiscals > $ctrFiscals);
   
-  if($hasDirectors || $hasFicals)
+  if ($hasDirectors || $hasFicals)
   {
     let $message = 'Você precisa montar o conselho fiscal!';
     
-    if($hasDirectors)
+    if ($hasDirectors)
       $message = 'Você precisa montar a diretoria!';
     
     generateNotify('Opss', $message, 'error');

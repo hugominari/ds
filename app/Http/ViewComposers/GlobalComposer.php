@@ -61,10 +61,19 @@ class GlobalComposer extends Controller
                 'roleId' => !empty($role) ? $role->id : '',
             ]);
             
+            $routeName = ($route) ? $route->getActionMethod() : null;
+            
             //Disable all inputs on show methods
-            if ($route && $route->getActionMethod() == 'show') {
+            if ($routeName == 'show') {
                 JavaScript::put(
                     ['readOnly' => true,]
+                );
+            }
+            
+            if($routeName == 'edit')
+            {
+                JavaScript::put(
+                    ['editing' => true,]
                 );
             }
         }

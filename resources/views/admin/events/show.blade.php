@@ -14,7 +14,7 @@
 		</div>
 	</section>
 	
-	{!! Form::open(['url' => 'javascript:;', 'method' => 'POST', 'class' => 'ajax-form']) !!}
+	{!! Form::open(['url' => 'javascript:;']) !!}
 		<div class="row">
 		    <div class="col-md-4">
 				<div class="card">
@@ -55,7 +55,29 @@
 				</div>
 		    </div>
 		</div>
+	
 	{!! Form::close() !!}
+	
+	<div class="row mt-4">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					Fotos do evento
+				</div>
+				<div class="card-body">
+					<div class="box-dz-multiples">
+						@if(!empty($albumPhotos))
+							@foreach($albumPhotos as $albumPhoto)
+								{{ Form::cDropzone('album', $albumPhoto, '', '1', 'Adicionar foto', 'drop-square pull-left mx-1 my-1 w-r-24 disabled', 'image/*') }}
+							@endforeach
+						@else
+							<p>Nenhuma foto foi anexada!</p>
+						@endif
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 @stop
 

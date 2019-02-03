@@ -68,7 +68,7 @@
                                         @if(!empty($socials))
                                             @foreach($socials as $social)
                                                 <li class="list-inline-item">
-                                                    <a class="p-2 fa-lg tw-ic" href="{{ $social->url }}">
+                                                    <a class="p-2 fa-lg tw-ic" href="{{ $social->url }}" target="_blank">
                                                         <i class="fab fa-{{ $social->icon }} font-24"></i>
                                                     </a>
                                                 </li>

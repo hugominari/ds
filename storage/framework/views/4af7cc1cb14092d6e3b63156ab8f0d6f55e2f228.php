@@ -63,7 +63,7 @@
 						    </div>
 						</div>
 						<div class="row">
-							<div id="box-members" class="col-md-12 connectedSortable">
+							<div id="box-members" class="col-md-12 connectedSortable" style="min-height: 30px">
 								<?php if(!empty($members)): ?>
 									<?php $__currentLoopData = $members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<img class="img-fluid width-72 heigth-72 float-left mx-2 my-2 z-depth-1"
@@ -86,8 +86,9 @@
 								<div id="box-directors" class="row">
 									<?php if(!empty($positionsDirectors)): ?>
 										<?php $__currentLoopData = $positionsDirectors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $positionDirector): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-											<div class="col-md-4 connectedSortable" data-position="<?php echo e($positionDirector->id); ?>">
+											<div class="col-md-4" data-position="<?php echo e($positionDirector->id); ?>">
 												<p><?php echo e($positionDirector->name); ?></p>
+												<div class="connectedSortable w-r-100 h-r-100"></div>
 											</div>
 										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 									<?php endif; ?>
@@ -104,8 +105,9 @@
 								<div id="box-fiscals" class="row">
 									<?php if(!empty($positionsFiscals)): ?>
 										<?php $__currentLoopData = $positionsFiscals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $positionFiscal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-											<div class="col-md-4 connectedSortable" data-position="<?php echo e($positionFiscal->id); ?>">
+											<div class="col-md-4" data-position="<?php echo e($positionFiscal->id); ?>">
 												<p><?php echo e($positionFiscal->name); ?></p>
+												<div class="connectedSortable w-r-100 h-r-100"></div>
 											</div>
 										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 									<?php endif; ?>

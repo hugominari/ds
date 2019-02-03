@@ -284,6 +284,9 @@ Route::group(
             Route::group(
                 ['prefix' => 'mandatory'], function()
             {
+                Route::get('list', 'MandatoryController@list')
+                    ->name('mandatory.list');
+                
                 Route::get('index', 'MandatoryController@index')->name(
                     'mandatory.index'
                 );
@@ -301,14 +304,14 @@ Route::group(
                     'mandatory.store'
                 );
                 Route::match(
-                    ['put', 'path'], '{id?}', 'MandatoryController@update'
+                    ['put', 'path'], '/update/{id?}', 'MandatoryController@update'
                 )->name('mandatory.update');
+                
                 Route::delete('{id}', 'MandatoryController@destroy')->name(
                     'mandatory.destroy'
                 );
                 
-                Route::get('list', 'MandatoryController@list')
-                    ->name('mandatory.list');
+                
             }
             );
     

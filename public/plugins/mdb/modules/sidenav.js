@@ -258,6 +258,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             _this3.removeMenu();
           } else {
+            _this3.menuOut = true;
             _this3.$sidenavOverlay = $('<div id="sidenav-overlay"></div>');
 
             _this3.$body.append(_this3.$sidenavOverlay);

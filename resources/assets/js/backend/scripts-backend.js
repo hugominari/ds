@@ -78,23 +78,14 @@ function fixeActions()
 
 $(document).on("change", "#icon", function(e){
     e.preventDefault();
-    let val = $(this).val();
-	let icon = '<i class="fab fa-' + val + ' font-48"></i>';
-	let box = $('.box-icon');
+    var val = $(this).val();
+	var icon = '<i class="fab fa-' + val + ' font-48"></i>';
+	var box = $('.box-icon');
 	
 	box.html(icon);
 });
 
-try
-{
-	$( "#box-members, #box-positions [data-position]" ).sortable({
-		connectWith: ".connectedSortable"
-	}).disableSelection();
-}
-catch (e)
-{
-	console.log('');
-}
+
 
 
 

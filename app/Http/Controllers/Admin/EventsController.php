@@ -84,13 +84,25 @@ class EventsController extends Controller
             }
             
             $event = Event::create($request->all());
+            $path = "public/{$this->folder}/{$event->id}";
             
             //Save image
             if (!empty($request->image)) {
                 $this->saveFile(
-                    $request->image, "public/{$this->folder}/{$event->id}",
+                    $request->image, $path,
                     'image'
                 );
+            }
+    
+            //Save album
+            if (!empty($request->album)) {
+                foreach ($request->album as $key => $album)
+                {
+                    $this->saveFile(
+                        $album, "{$path}/album",
+                        "album_photo_{$key}"
+                    );
+                }
             }
             
             $response->success = true;
@@ -133,8 +145,9 @@ class EventsController extends Controller
     {
         $event = Event::findOrFail($id);
         $page = $showOnly ? 'show' : 'edit';
+        $albumPhotos = $event->getAlbum();
         
-        return view("admin.{$this->folder}.{$page}", compact(['event']));
+        return view("admin.{$this->folder}.{$page}", compact('event', 'albumPhotos'));
     }
     
     /**
@@ -152,13 +165,25 @@ class EventsController extends Controller
         try {
             $event = Event::findOrFail($id);
             $event->update($request->all());
+            $path = "public/{$this->folder}/{$event->id}";
             
             //Save image
             if (!empty($request->image)) {
                 $this->saveFile(
-                    $request->image, "public/{$this->folder}/{$event->id}",
+                    $request->image, $path,
                     'image', false, true
                 );
+            }
+    
+            //Save album
+            if (!empty($request->album)) {
+                foreach ($request->album as $key => $album)
+                {
+                    $this->saveFile(
+                        $album, "{$path}/album",
+                        "album_photo_{$key}", false, true
+                    );
+                }
             }
             
             $response->success = true;

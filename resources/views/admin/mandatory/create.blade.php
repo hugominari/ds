@@ -56,7 +56,7 @@
 						    </div>
 						</div>
 						<div class="row">
-							<div id="box-members" class="col-md-12 connectedSortable">
+							<div id="box-members" class="col-md-12 connectedSortable" style="min-height: 30px">
 								@if (!empty($members))
 									@foreach($members as $member)
 										<img class="img-fluid width-72 heigth-72 float-left mx-2 my-2 z-depth-1"
@@ -79,8 +79,9 @@
 								<div id="box-directors" class="row">
 									@if (!empty($positionsDirectors))
 										@foreach($positionsDirectors as $positionDirector)
-											<div class="col-md-4 connectedSortable" data-position="{{ $positionDirector->id }}">
+											<div class="col-md-4" data-position="{{ $positionDirector->id }}">
 												<p>{{ $positionDirector->name }}</p>
+												<div class="connectedSortable w-r-100 h-r-100"></div>
 											</div>
 										@endforeach
 									@endif
@@ -97,8 +98,9 @@
 								<div id="box-fiscals" class="row">
 									@if (!empty($positionsFiscals))
 										@foreach($positionsFiscals as $positionFiscal)
-											<div class="col-md-4 connectedSortable" data-position="{{ $positionFiscal->id }}">
+											<div class="col-md-4" data-position="{{ $positionFiscal->id }}">
 												<p>{{ $positionFiscal->name }}</p>
+												<div class="connectedSortable w-r-100 h-r-100"></div>
 											</div>
 										@endforeach
 									@endif

@@ -2,7 +2,6 @@
 
 @push('styles')
 	{{ Html::style('plugins/datatables/DataTables-1.10.18/css/jquery.dataTables.min.css') }}
-	{{ Html::style('css/addons/datatables.min.css') }}
 @endpush
 
 @push('scripts')

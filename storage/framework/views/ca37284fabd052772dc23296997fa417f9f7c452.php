@@ -14,18 +14,16 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-cascade wider reverse">
-                        <div class="view view-cascade overlay">
-                            <img class="card-img-top heigth-300" src="<?php echo e($post->image->url); ?>" alt="<?php echo e($post->title); ?>">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
+                        <div class="view view-cascade overlay heigth-400">
+                            <img class="card-img-top obj-fit" src="<?php echo e($post->image->url); ?>" alt="<?php echo e($post->title); ?>">
+                            <div class="mask rgba-white-slight"></div>
                         </div>
                         <div class="card-body card-body-cascade text-center">
                             <h2 class="font-weight-bold"><a><?php echo e($post->title); ?></a></h2>
                             <p><?php echo e($post->created_at->format('d/m/Y')); ?></p>
                         </div>
                     </div>
-                    <div class="mt-5">
+                    <div class="mt-5 text-content">
                        <?php echo $post->description; ?>
 
                     </div>

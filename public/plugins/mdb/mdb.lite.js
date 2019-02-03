@@ -1,27 +1,27 @@
 /*!
  * Material Design for Bootstrap 4
- * Version: MDB Lite 4.5.13
+ * Version: MDB Lite 4.7.0
  *
  *
  * Copyright: Material Design for Bootstrap
- * http://mdbootstrap.com/
+ * https://mdbootstrap.com/
  *
- * Read the license: http://mdbootstrap.com/license/
+ * Read the license: https://mdbootstrap.com/license/
  *
  *
- * Documentation: http://mdbootstrap.com/
+ * Documentation: https://mdbootstrap.com/
  *
- * Getting started: http://mdbootstrap.com/getting-started/
+ * Getting started: https://mdbootstrap.com/getting-started/
  *
- * Tutorials: http://mdbootstrap.com/bootstrap-tutorial/
+ * Tutorials: https://mdbootstrap.com/bootstrap-tutorial/
  *
- * Templates: http://mdbootstrap.com/templates/
+ * Templates: https://mdbootstrap.com/templates/
  *
- * Support: http://mdbootstrap.com/forums/forum/support/
+ * Support: https://mdbootstrap.com/forums/forum/support/
  *
  * Contact: office@mdbootstrap.com
  *
- * Atribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js , Hammer.js
+ * Attribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.js , Hammer.js
  *
  */
 
@@ -451,9 +451,9 @@ var WOW;
 "use strict";
 
 (function ($) {
-  let SCROLLING_NAVBAR_OFFSET_TOP = 50;
+  var SCROLLING_NAVBAR_OFFSET_TOP = 50;
   $(window).on('scroll', function () {
-    let $navbar = $('.navbar');
+    var $navbar = $('.navbar');
 
     if ($navbar.length) {
       if ($navbar.offset().top > SCROLLING_NAVBAR_OFFSET_TOP) {
@@ -677,26 +677,18 @@ var WOW;
             var parent = element.parentNode;
 
             // If input already have parent just pass through
-            if (parent.tagName.toLowerCase() === 'i' && parent.classList.contains('waves-effect')) {
+            if (parent.tagName.toLowerCase() === 'span' && parent.classList.contains('waves-effect')) {
                 return;
             }
 
             // Put element class and style to the specified parent
-            var wrapper       = document.createElement('i');
-            wrapper.className = element.className + ' waves-input-wrapper';
-            element.className = 'waves-button-input';
+            var wrapper       = document.createElement('span');
+            wrapper.className = 'waves-input-wrapper';
+            // element.className = 'waves-button-input';
 
             // Put element as child
             parent.replaceChild(wrapper, element);
             wrapper.appendChild(element);
-
-            // Apply element color and background color to wrapper
-            var elementStyle    = window.getComputedStyle(element, null);
-            var color           = elementStyle.color;
-            var backgroundColor = elementStyle.backgroundColor;
-
-            wrapper.setAttribute('style', 'color:' + color + ';background:' + backgroundColor);
-            element.setAttribute('style', 'background-color:rgba(0,0,0,0);');
 
         },
 
@@ -1080,30 +1072,30 @@ Waves.init();
 var _this = void 0;
 
 (function ($) {
-  let inputSelector = `${['text', 'password', 'email', 'url', 'tel', 'number', 'search', 'search-md'].map(function (selector) {
-    return `input[type=${selector}]`;
-  }).join(', ')}, textarea`;
-  let textAreaSelector = '.materialize-textarea';
+  var inputSelector = "".concat(['text', 'password', 'email', 'url', 'tel', 'number', 'search', 'search-md'].map(function (selector) {
+    return "input[type=".concat(selector, "]");
+  }).join(', '), ", textarea");
+  var textAreaSelector = '.materialize-textarea';
 
-  let updateTextFields = function updateTextFields($input) {
-    let $labelAndIcon = $input.siblings('label, i');
-    let hasValue = $input.val().length;
-    let hasPlaceholder = $input.attr('placeholder');
-    let addOrRemove = `${hasValue || hasPlaceholder ? 'add' : 'remove'}Class`;
+  var updateTextFields = function updateTextFields($input) {
+    var $labelAndIcon = $input.siblings('label, i');
+    var hasValue = $input.val().length;
+    var hasPlaceholder = $input.attr('placeholder');
+    var addOrRemove = "".concat(hasValue || hasPlaceholder ? 'add' : 'remove', "Class");
     $labelAndIcon[addOrRemove]('active');
   };
 
-  let validateField = function validateField($input) {
+  var validateField = function validateField($input) {
     if ($input.hasClass('validate')) {
-      let value = $input.val();
-      let noValue = !value.length;
-      let isValid = !$input[0].validity.badInput;
+      var value = $input.val();
+      var noValue = !value.length;
+      var isValid = !$input[0].validity.badInput;
 
       if (noValue && isValid) {
         $input.removeClass('valid').removeClass('invalid');
       } else {
-        let valid = $input.is(':valid');
-        let length = Number($input.attr('length')) || 0;
+        var valid = $input.is(':valid');
+        var length = Number($input.attr('length')) || 0;
 
         if (valid && (!length || length > value.length)) {
           $input.removeClass('invalid').addClass('valid');
@@ -1114,13 +1106,13 @@ var _this = void 0;
     }
   };
 
-  let textAreaAutoResize = function textAreaAutoResize() {
-    let $textarea = $(_this);
+  var textAreaAutoResize = function textAreaAutoResize() {
+    var $textarea = $(_this);
 
     if ($textarea.val().length) {
-      let $hiddenDiv = $('.hiddendiv');
-      let fontFamily = $textarea.css('font-family');
-      let fontSize = $textarea.css('font-size');
+      var $hiddenDiv = $('.hiddendiv');
+      var fontFamily = $textarea.css('font-family');
+      var fontSize = $textarea.css('font-size');
 
       if (fontSize) {
         $hiddenDiv.css('font-size', fontSize);
@@ -1134,8 +1126,8 @@ var _this = void 0;
         $hiddenDiv.css('overflow-wrap', 'normal').css('white-space', 'pre');
       }
 
-      $hiddenDiv.text(`${$textarea.val()}\n`);
-      let content = $hiddenDiv.html().replace(/\n/g, '<br>');
+      $hiddenDiv.text("".concat($textarea.val(), "\n"));
+      var content = $hiddenDiv.html().replace(/\n/g, '<br>');
       $hiddenDiv.html(content); // When textarea is hidden, width goes crazy.
       // Approximate with half of window size
 
@@ -1145,10 +1137,10 @@ var _this = void 0;
   };
 
   $(inputSelector).each(function (index, input) {
-    let $this = $(input);
-    let $labelAndIcon = $this.siblings('label, i');
+    var $this = $(input);
+    var $labelAndIcon = $this.siblings('label, i');
     updateTextFields($this);
-    let isValid = input.validity.badInput;
+    var isValid = input.validity.badInput;
 
     if (isValid) {
       $labelAndIcon.addClass('active');
@@ -1158,10 +1150,10 @@ var _this = void 0;
     $(e.target).siblings('label, i').addClass('active');
   });
   $(document).on('blur', inputSelector, function (e) {
-    let $this = $(e.target);
-    let noValue = !$this.val();
-    let invalid = !e.target.validity.badInput;
-    let noPlaceholder = $this.attr('placeholder') === undefined;
+    var $this = $(e.target);
+    var noValue = !$this.val();
+    var invalid = !e.target.validity.badInput;
+    var noPlaceholder = $this.attr('placeholder') === undefined;
 
     if (noValue && invalid && noPlaceholder) {
       $this.siblings('label, i').removeClass('active');
@@ -1170,29 +1162,29 @@ var _this = void 0;
     validateField($this);
   });
   $(document).on('change', inputSelector, function (e) {
-    let $this = $(e.target);
+    var $this = $(e.target);
     updateTextFields($this);
     validateField($this);
   });
   $('input[autofocus]').siblings('label, i').addClass('active');
   $(document).on('reset', function (e) {
-    let $formReset = $(e.target);
+    var $formReset = $(e.target);
 
     if ($formReset.is('form')) {
-      let $formInputs = $formReset.find(inputSelector);
+      var $formInputs = $formReset.find(inputSelector);
       $formInputs.removeClass('valid').removeClass('invalid').each(function (index, input) {
-        let $this = $(input);
-        let noDefaultValue = !$this.val();
-        let noPlaceholder = !$this.attr('placeholder');
+        var $this = $(input);
+        var noDefaultValue = !$this.val();
+        var noPlaceholder = !$this.attr('placeholder');
 
         if (noDefaultValue && noPlaceholder) {
           $this.siblings('label, i').removeClass('active');
         }
       });
       $formReset.find('select.initialized').each(function (index, select) {
-        let $select = $(select);
-        let $visibleInput = $select.siblings('input.select-dropdown');
-        let defaultValue = $select.children('[selected]').val();
+        var $select = $(select);
+        var $visibleInput = $select.siblings('input.select-dropdown');
+        var defaultValue = $select.children('[selected]').val();
         $select.val(defaultValue);
         $visibleInput.val(defaultValue);
       });
@@ -1200,14 +1192,14 @@ var _this = void 0;
   });
 
   function init() {
-    let $text = $('.md-textarea-auto');
+    var $text = $('.md-textarea-auto');
 
     if ($text.length) {
-      let observe;
+      var observe;
 
       if (window.attachEvent) {
         observe = function observe(element, event, handler) {
-          element.attachEvent(`on${event}`, handler);
+          element.attachEvent("on".concat(event), handler);
         };
       } else {
         observe = function observe(element, event, handler) {
@@ -1216,11 +1208,11 @@ var _this = void 0;
       }
 
       $text.each(function () {
-        let self = this;
+        var self = this;
 
         function resize() {
           self.style.height = 'auto';
-          self.style.height = `${self.scrollHeight}px`;
+          self.style.height = "".concat(self.scrollHeight, "px");
         }
 
         function delayedResize() {
@@ -1238,10 +1230,10 @@ var _this = void 0;
   }
 
   init();
-  let $body = $('body');
+  var $body = $('body');
 
   if (!$('.hiddendiv').first().length) {
-    let $hiddenDiv = $('<div class="hiddendiv common"></div>');
+    var $hiddenDiv = $('<div class="hiddendiv common"></div>');
     $body.append($hiddenDiv);
   }
 
@@ -1263,14 +1255,14 @@ $(document).ready(function () {
 
 (function ($) {
   $(document).on('click.card', '.card', function (e) {
-    let $reveal = $(this).find('.card-reveal');
+    var $reveal = $(this).find('.card-reveal');
 
     if ($reveal.length) {
-      let $clicked = $(e.target);
-      let isTitle = $clicked.is('.card-reveal .card-title');
-      let isTitleIcon = $clicked.is('.card-reveal .card-title i');
-      let isActivator = $clicked.is('.card .activator');
-      let isActivatorIcon = $clicked.is('.card .activator i');
+      var $clicked = $(e.target);
+      var isTitle = $clicked.is('.card-reveal .card-title');
+      var isTitleIcon = $clicked.is('.card-reveal .card-title i');
+      var isActivator = $clicked.is('.card .activator');
+      var isActivatorIcon = $clicked.is('.card .activator i');
 
       if (isTitle || isTitleIcon) {
         // down
@@ -1301,20 +1293,21 @@ $(document).ready(function () {
     }
   });
   $('.rotate-btn').on('click', function () {
-    let cardId = $(this).attr('data-card');
-    $(`#${cardId}`).toggleClass('flipped');
+    var cardId = $(this).attr('data-card');
+    $("#".concat(cardId)).toggleClass('flipped');
   });
-  var frontHeight = $('.front').outerHeight();
-  var backHeight = $('.back').outerHeight();
+  $(window).on('load', function () {
+    var frontHeight = $('.front').outerHeight();
+    var backHeight = $('.back').outerHeight();
 
-  if (frontHeight > backHeight) {
-    $('.card-wrapper, .back').height(frontHeight);
-  } else if (frontHeight > backHeight) {
-    $('.card-wrapper, .front').height(backHeight);
-  } else {
-    $('.card-wrapper').height(backHeight);
-  }
-
+    if (frontHeight > backHeight) {
+      $('.card-wrapper, .back').height(frontHeight);
+    } else if (frontHeight > backHeight) {
+      $('.card-wrapper, .front').height(backHeight);
+    } else {
+      $('.card-wrapper').height(backHeight);
+    }
+  });
   $('.card-share > a').on('click', function (e) {
     e.preventDefault();
     $(this).toggleClass('share-expanded').parent().find('div').toggleClass('social-reveal-active');
@@ -1325,7 +1318,7 @@ $(document).ready(function () {
 (function ($) {
   $.fn.characterCounter = function () {
     return this.each(function () {
-      let itHasLengthAttribute = $(this).attr('length') !== undefined;
+      var itHasLengthAttribute = $(this).attr('length') !== undefined;
 
       if (itHasLengthAttribute) {
         $(this).on('input', updateCounter);
@@ -1337,15 +1330,15 @@ $(document).ready(function () {
   };
 
   function updateCounter() {
-    let maxLength = Number($(this).attr('length'));
-    let actualLength = Number($(this).val().length);
-    let isValidLength = actualLength <= maxLength;
-    $(this).parent().find('span[class="character-counter"]').html(`${actualLength}/${maxLength}`);
+    var maxLength = Number($(this).attr('length'));
+    var actualLength = Number($(this).val().length);
+    var isValidLength = actualLength <= maxLength;
+    $(this).parent().find('span[class="character-counter"]').html("".concat(actualLength, "/").concat(maxLength));
     addInputStyle(isValidLength, $(this));
   }
 
   function addCounterElement($input) {
-    let $counterElement = $('<span/>').addClass('character-counter').css('float', 'right').css('font-size', '12px').css('height', 1);
+    var $counterElement = $('<span/>').addClass('character-counter').css('float', 'right').css('font-size', '12px').css('height', 1);
     $input.parent().append($counterElement);
   }
 
@@ -1354,7 +1347,7 @@ $(document).ready(function () {
   }
 
   function addInputStyle(isValidLength, $input) {
-    let inputHasInvalidClass = $input.hasClass('invalid');
+    var inputHasInvalidClass = $input.hasClass('invalid');
 
     if (isValidLength && inputHasInvalidClass) {
       $input.removeClass('invalid');
@@ -1525,7 +1518,7 @@ $(document).ready(function () {
             function getDefaults() {
                 return {
                     tapToDismiss: true,
-                    toastClass: 'toast',
+                    toastClass: 'md-toast',
                     containerId: 'toast-container',
                     debug: false,
 
@@ -1540,16 +1533,16 @@ $(document).ready(function () {
 
                     extendedTimeOut: 1000,
                     iconClasses: {
-                        error: 'toast-error',
-                        info: 'toast-info',
-                        success: 'toast-success',
-                        warning: 'toast-warning'
+                        error: 'md-toast-error',
+                        info: 'md-toast-info',
+                        success: 'md-toast-success',
+                        warning: 'md-toast-warning'
                     },
-                    iconClass: 'toast-info',
-                    positionClass: 'toast-top-right',
+                    iconClass: 'md-toast-info',
+                    positionClass: 'md-toast-top-right',
                     timeOut: 5000, // Set timeOut and extendedTimeOut to 0 to make it sticky
-                    titleClass: 'toast-title',
-                    messageClass: 'toast-message',
+                    titleClass: 'md-toast-title',
+                    messageClass: 'md-toast-message',
                     target: 'body',
                     closeHtml: '<button type="button">&times;</button>',
                     newestOnTop: true,
@@ -1692,14 +1685,14 @@ $(document).ready(function () {
 
                 function setCloseButton() {
                     if (options.closeButton) {
-                        $closeElement.addClass('toast-close-button').attr('role', 'button');
+                        $closeElement.addClass('md-toast-close-button').attr('role', 'button');
                         $toastElement.prepend($closeElement);
                     }
                 }
 
                 function setProgressBar() {
                     if (options.progressBar) {
-                        $progressElement.addClass('toast-progress');
+                        $progressElement.addClass('md-toast-progress');
                         $toastElement.prepend($progressElement);
                     }
                 }
@@ -1786,13 +1779,13 @@ $(document).ready(function () {
 
 "use strict";
 
-let SMOOTH_SCROLL_DURATION = 700;
+var SMOOTH_SCROLL_DURATION = 700;
 $('.smooth-scroll').on('click', 'a', function () {
-  let elAttr = $(this).attr('href');
+  var elAttr = $(this).attr('href');
 
   if (typeof elAttr !== typeof undefined && elAttr.indexOf('#') === 0) {
-    let offset = $(this).attr('data-offset') ? $(this).attr('data-offset') : 0;
-    let setHash = $(this).parentsUntil('.smooth-scroll').last().parent().attr('data-allow-hashes');
+    var offset = $(this).attr('data-offset') ? $(this).attr('data-offset') : 0;
+    var setHash = $(this).parentsUntil('.smooth-scroll').last().parent().attr('data-allow-hashes');
     $('body,html').animate({
       scrollTop: $(elAttr).offset().top - offset
     }, SMOOTH_SCROLL_DURATION);
@@ -1814,11 +1807,11 @@ $('.smooth-scroll').on('click', 'a', function () {
 
   $.fn.dropdown = function (option) {
     this.each(function () {
-      let origin = $(this);
-      let options = $.extend({}, $.fn.dropdown.defaults, option);
-      let isFocused = false; // Dropdown menu
+      var origin = $(this);
+      var options = $.extend({}, $.fn.dropdown.defaults, option);
+      var isFocused = false; // Dropdown menu
 
-      let activates = $(`#${origin.attr('data-activates')}`);
+      var activates = $("#".concat(origin.attr('data-activates')));
 
       function updateOptions() {
         if (origin.data('induration') !== undefined) {
@@ -1877,23 +1870,23 @@ $('.smooth-scroll').on('click', 'a', function () {
         } // Offscreen detection
 
 
-        let windowHeight = window.innerHeight;
-        let originHeight = origin.innerHeight();
-        let offsetLeft = origin.offset().left;
-        let offsetTop = origin.offset().top - $(window).scrollTop();
-        let currAlignment = options.alignment;
-        let gutterSpacing = 0;
-        let leftPosition = 0; // Below Origin
+        var windowHeight = window.innerHeight;
+        var originHeight = origin.innerHeight();
+        var offsetLeft = origin.offset().left;
+        var offsetTop = origin.offset().top - $(window).scrollTop();
+        var currAlignment = options.alignment;
+        var gutterSpacing = 0;
+        var leftPosition = 0; // Below Origin
 
-        let verticalOffset = 0;
+        var verticalOffset = 0;
 
         if (options.belowOrigin === true) {
           verticalOffset = originHeight;
         } // Check for scrolling positioned container.
 
 
-        let scrollOffset = 0;
-        let wrapper = origin.parent();
+        var scrollOffset = 0;
+        var wrapper = origin.parent();
 
         if (!wrapper.is('body') && wrapper[0].scrollHeight > wrapper[0].clientHeight) {
           scrollOffset = wrapper[0].scrollTop;
@@ -1911,7 +1904,7 @@ $('.smooth-scroll').on('click', 'a', function () {
         if (offsetTop + activates.innerHeight() > windowHeight) {
           // If going upwards still goes offscreen, just crop height of dropdown.
           if (offsetTop + originHeight - activates.innerHeight() < 0) {
-            let adjustedHeight = windowHeight - offsetTop - verticalOffset;
+            var adjustedHeight = windowHeight - offsetTop - verticalOffset;
             activates.css('max-height', adjustedHeight);
           } else {
             // Flow upwards.
@@ -1928,7 +1921,7 @@ $('.smooth-scroll').on('click', 'a', function () {
           gutterSpacing = options.gutter;
           leftPosition = origin.position().left + gutterSpacing;
         } else if (currAlignment === 'right') {
-          let offsetRight = origin.position().left + origin.outerWidth() - activates.outerWidth();
+          var offsetRight = origin.position().left + origin.outerWidth() - activates.outerWidth();
           gutterSpacing = -options.gutter;
           leftPosition = offsetRight + gutterSpacing;
         } // Position dropdown
@@ -1944,11 +1937,9 @@ $('.smooth-scroll').on('click', 'a', function () {
           queue: false,
           duration: options.inDuration,
           easing: 'easeOutCubic',
-
-          complete() {
+          complete: function complete() {
             $(this).css('height', '');
           }
-
         }).animate({
           opacity: 1,
           scrollTop: 0
@@ -1972,8 +1963,8 @@ $('.smooth-scroll').on('click', 'a', function () {
 
 
       if (options.hover) {
-        let open = false;
-        origin.unbind(`click.${origin.attr('id')}`); // Hover handler to show dropdown
+        var open = false;
+        origin.unbind("click.".concat(origin.attr('id'))); // Hover handler to show dropdown
 
         origin.on('mouseenter', function () {
           // Mouse over
@@ -1984,7 +1975,7 @@ $('.smooth-scroll').on('click', 'a', function () {
         });
         origin.on('mouseleave', function (e) {
           // If hover on origin then to something other than dropdown content, then close
-          let toEl = e.toElement || e.relatedTarget; // added browser compatibility for target element
+          var toEl = e.toElement || e.relatedTarget; // added browser compatibility for target element
 
           if (!$(toEl).closest('.dropdown-content').is(activates)) {
             activates.stop(true, true);
@@ -1994,7 +1985,7 @@ $('.smooth-scroll').on('click', 'a', function () {
         });
         activates.on('mouseleave', function (e) {
           // Mouse out
-          let toEl = e.toElement || e.relatedTarget;
+          var toEl = e.toElement || e.relatedTarget;
 
           if (!$(toEl).closest('.dropdown-button').is(origin)) {
             activates.stop(true, true);
@@ -2004,8 +1995,8 @@ $('.smooth-scroll').on('click', 'a', function () {
         }); // Click
       } else {
         // Click handler to show dropdown
-        origin.unbind(`click.${origin.attr('id')}`);
-        origin.bind(`click.${origin.attr('id')}`, function (e) {
+        origin.unbind("click.".concat(origin.attr('id')));
+        origin.bind("click.".concat(origin.attr('id')), function (e) {
           if (!isFocused) {
             if (origin[0] === e.currentTarget && !origin.hasClass('active') && $(e.target).closest('.dropdown-content').length === 0) {
               e.preventDefault(); // Prevents button click from moving window
@@ -2014,15 +2005,15 @@ $('.smooth-scroll').on('click', 'a', function () {
             } else if (origin.hasClass('active')) {
               // If origin is clicked and menu is open, close menu
               hideDropdown();
-              $(document).unbind(`click.${activates.attr('id')} touchstart.${activates.attr('id')}`);
+              $(document).unbind("click.".concat(activates.attr('id'), " touchstart.").concat(activates.attr('id')));
             } // If menu open, add click close handler to document
 
 
             if (activates.hasClass('active')) {
-              $(document).bind(`click.${activates.attr('id')} touchstart.${activates.attr('id')}`, function (e) {
+              $(document).bind("click.".concat(activates.attr('id'), " touchstart.").concat(activates.attr('id')), function (e) {
                 if (!activates.is(e.target) && !origin.is(e.target) && !origin.find(e.target).length) {
                   hideDropdown();
-                  $(document).unbind(`click.${activates.attr('id')} touchstart.${activates.attr('id')}`);
+                  $(document).unbind("click.".concat(activates.attr('id'), " touchstart.").concat(activates.attr('id')));
                 }
               });
             }
@@ -2050,8 +2041,8 @@ $('.smooth-scroll').on('click', 'a', function () {
 
   $.fn.mdbDropSearch = function (options) {
     var $mdbInput = $(this).find('input');
-    this.filter(function (value) {
-      $(this).on('keyup', value, function () {
+    this.filter(function (value, index) {
+      $(index).on('keyup', function () {
         var $linksInDropMenu = $mdbInput.closest('div[id]').find('a, li');
 
         for (var i = 0; i < $linksInDropMenu.length; i++) {
@@ -2065,8 +2056,6 @@ $('.smooth-scroll').on('click', 'a', function () {
             });
           }
         }
-
-        ;
       });
     });
     var settings = $.extend({
@@ -2089,15 +2078,15 @@ $('.smooth-scroll').on('click', 'a', function () {
   };
 })(jQuery);
 
-let dropdownSelectors = $('.dropdown, .dropup'); // Custom function to read dropdown data
+var dropdownSelectors = $('.dropdown, .dropup'); // Custom function to read dropdown data
 
 function dropdownEffectData(target) {
   // TODO - page level global?
-  let effectInDefault = 'fadeIn';
-  let effectOutDefault = 'fadeOut';
-  let dropdown = $(target);
-  let dropdownMenu = $('.dropdown-menu', target);
-  let parentUl = dropdown.parents('ul.nav'); // If parent is ul.nav allow global effect settings
+  var effectInDefault = 'fadeIn';
+  var effectOutDefault = 'fadeOut';
+  var dropdown = $(target);
+  var dropdownMenu = $('.dropdown-menu', target);
+  var parentUl = dropdown.parents('ul.nav'); // If parent is ul.nav allow global effect settings
 
   if (parentUl.height > 0) {
     effectInDefault = parentUl.data('dropdown-in') || null;
@@ -2105,9 +2094,9 @@ function dropdownEffectData(target) {
   }
 
   return {
-    target,
-    dropdown,
-    dropdownMenu,
+    target: target,
+    dropdown: dropdown,
+    dropdownMenu: dropdownMenu,
     effectIn: dropdownMenu.data('dropdown-in') || effectInDefault,
     effectOut: dropdownMenu.data('dropdown-out') || effectOutDefault
   };
@@ -2123,7 +2112,7 @@ function dropdownEffectStart(data, effectToStart) {
 
 
 function dropdownEffectEnd(data, callbackFunc) {
-  let animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+  var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
   data.dropdown.one(animationEnd, function () {
     data.dropdown.removeClass('dropdown-animating');
     data.dropdownMenu.removeClass(['animated', data.effectIn, data.effectOut].join(' ')); // Custom callback option, used to remove open class in out effect
@@ -2136,24 +2125,22 @@ function dropdownEffectEnd(data, callbackFunc) {
 
 
 dropdownSelectors.on({
-  'show.bs.dropdown'() {
+  'show.bs.dropdown': function showBsDropdown() {
     // On show, start in effect
-    let dropdown = dropdownEffectData(this);
+    var dropdown = dropdownEffectData(this);
     dropdownEffectStart(dropdown, dropdown.effectIn);
   },
-
-  'shown.bs.dropdown'() {
+  'shown.bs.dropdown': function shownBsDropdown() {
     // On shown, remove in effect once complete
-    let dropdown = dropdownEffectData(this);
+    var dropdown = dropdownEffectData(this);
 
     if (dropdown.effectIn && dropdown.effectOut) {
       dropdownEffectEnd(dropdown);
     }
   },
-
-  'hide.bs.dropdown'(e) {
+  'hide.bs.dropdown': function hideBsDropdown(e) {
     // On hide, start out effect
-    let dropdown = dropdownEffectData(this);
+    var dropdown = dropdownEffectData(this);
 
     if (dropdown.effectOut) {
       e.preventDefault();
@@ -2164,7 +2151,6 @@ dropdownSelectors.on({
       });
     }
   }
-
 });
 "use strict";
 
@@ -2173,16 +2159,16 @@ dropdownSelectors.on({
 
   $(document).ready(function () {
     $(document).on('mouseenter', '.fixed-action-btn', function () {
-      let $this = $(this);
+      var $this = $(this);
       openFABMenu($this);
     });
     $(document).on('mouseleave', '.fixed-action-btn', function () {
-      let $this = $(this);
+      var $this = $(this);
       closeFABMenu($this);
     });
     $(document).on('click', '.fixed-action-btn > a', function () {
-      let $this = $(this);
-      let $menu = $this.parent();
+      var $this = $(this);
+      var $menu = $this.parent();
       $menu.hasClass('active') ? openFABMenu($menu) : closeFABMenu($menu);
 
       if ($menu.hasClass('active')) {
@@ -2193,32 +2179,30 @@ dropdownSelectors.on({
     });
   });
   $.fn.extend({
-    openFAB() {
+    openFAB: function openFAB() {
       openFABMenu($(this));
     },
-
-    closeFAB() {
+    closeFAB: function closeFAB() {
       closeFABMenu($(this));
     }
-
   });
 
-  let openFABMenu = function openFABMenu(btn) {
-    let fab = btn;
+  var openFABMenu = function openFABMenu(btn) {
+    var fab = btn;
 
     if (!fab.hasClass('active')) {
       fab.addClass('active');
-      let btnList = document.querySelectorAll('ul .btn-floating');
+      var btnList = document.querySelectorAll('ul .btn-floating');
       btnList.forEach(function (el) {
         el.classList.add('shown');
       });
     }
   };
 
-  let closeFABMenu = function closeFABMenu(btn) {
-    let fab = btn;
+  var closeFABMenu = function closeFABMenu(btn) {
+    var fab = btn;
     fab.removeClass('active');
-    let btnList = document.querySelectorAll('ul .btn-floating');
+    var btnList = document.querySelectorAll('ul .btn-floating');
     btnList.forEach(function (el) {
       el.classList.remove('shown');
     });
@@ -2233,7 +2217,7 @@ dropdownSelectors.on({
   });
 
   function toggleFABMenu(btn) {
-    let elem = btn;
+    var elem = btn;
 
     if (elem.hasClass('active')) {
       closeFABMenu(elem);
@@ -4928,23 +4912,23 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 (function ($) {
-  let MENU_WIDTH = 240;
-  let SN_BREAKPOINT = 1440;
-  let MENU_WIDTH_HALF = 2;
-  let MENU_LEFT_MIN_BORDER = 0.3;
-  let MENU_LEFT_MAX_BORDER = -0.5;
-  let MENU_RIGHT_MIN_BORDER = -0.3;
-  let MENU_RIGHT_MAX_BORDER = 0.5;
-  let MENU_VELOCITY_OFFSET = 10;
+  var MENU_WIDTH = 240;
+  var SN_BREAKPOINT = 1440;
+  var MENU_WIDTH_HALF = 2;
+  var MENU_LEFT_MIN_BORDER = 0.3;
+  var MENU_LEFT_MAX_BORDER = -0.5;
+  var MENU_RIGHT_MIN_BORDER = -0.3;
+  var MENU_RIGHT_MAX_BORDER = 0.5;
+  var MENU_VELOCITY_OFFSET = 10;
 
-  let SideNav =
+  var SideNav =
   /*#__PURE__*/
   function () {
     function SideNav(element, options) {
       _classCallCheck(this, SideNav);
 
       this.defaults = {
-        MENU_WIDTH,
+        MENU_WIDTH: MENU_WIDTH,
         edge: 'left',
         closeOnClick: false
       };
@@ -4952,7 +4936,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.options = this.assignOptions(options);
       this.menuOut = false;
       this.$body = $('body');
-      this.$menu = $(`#${this.$element.attr('data-activates')}`);
+      this.$menu = $("#".concat(this.$element.attr('data-activates')));
       this.$sidenavOverlay = $('#sidenav-overlay');
       this.$dragTarget = $('<div class="drag-target"></div>');
       this.$body.append(this.$dragTarget);
@@ -4987,9 +4971,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return;
         }
 
-        let touchX = e.gesture.center.x;
+        var touchX = e.gesture.center.x;
         this.disableScrolling();
-        let overlayExists = this.$sidenavOverlay.length !== 0;
+        var overlayExists = this.$sidenavOverlay.length !== 0;
 
         if (!overlayExists) {
           this.buildSidenavOverlay();
@@ -5011,25 +4995,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       key: "translateSidenavX",
       value: function translateSidenavX(touchX) {
         if (this.options.edge === 'left') {
-          let isRightDirection = touchX >= this.options.MENU_WIDTH / MENU_WIDTH_HALF;
+          var isRightDirection = touchX >= this.options.MENU_WIDTH / MENU_WIDTH_HALF;
           this.menuOut = isRightDirection;
-          this.$menu.css('transform', `translateX(${touchX - this.options.MENU_WIDTH}px)`);
+          this.$menu.css('transform', "translateX(".concat(touchX - this.options.MENU_WIDTH, "px)"));
         } else {
-          let isLeftDirection = touchX < window.innerWidth - this.options.MENU_WIDTH / MENU_WIDTH_HALF;
+          var isLeftDirection = touchX < window.innerWidth - this.options.MENU_WIDTH / MENU_WIDTH_HALF;
           this.menuOut = isLeftDirection;
-          let rightPos = touchX - this.options.MENU_WIDTH / MENU_WIDTH_HALF;
+          var rightPos = touchX - this.options.MENU_WIDTH / MENU_WIDTH_HALF;
 
           if (rightPos < 0) {
             rightPos = 0;
           }
 
-          this.$menu.css('transform', `translateX(${rightPos}px)`);
+          this.$menu.css('transform', "translateX(".concat(rightPos, "px)"));
         }
       }
     }, {
       key: "updateOverlayOpacity",
       value: function updateOverlayOpacity(touchX) {
-        let overlayPercentage;
+        var overlayPercentage;
 
         if (this.options.edge === 'left') {
           overlayPercentage = touchX / this.options.MENU_WIDTH;
@@ -5059,7 +5043,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "disableScrolling",
       value: function disableScrolling() {
-        let oldWidth = this.$body.innerWidth();
+        var oldWidth = this.$body.innerWidth();
         this.$body.css('overflow', 'hidden');
         this.$body.width(oldWidth);
       }
@@ -5070,10 +5054,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return;
         }
 
-        let velocityX = e.gesture.velocityX;
-        let touchX = e.gesture.center.x;
-        let leftPos = touchX - this.options.MENU_WIDTH;
-        let rightPos = touchX - this.options.MENU_WIDTH / MENU_WIDTH_HALF;
+        var velocityX = e.gesture.velocityX;
+        var touchX = e.gesture.center.x;
+        var leftPos = touchX - this.options.MENU_WIDTH;
+        var rightPos = touchX - this.options.MENU_WIDTH / MENU_WIDTH_HALF;
 
         if (leftPos > 0) {
           leftPos = 0;
@@ -5141,11 +5125,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           duration: 200,
           queue: false,
           easing: 'easeOutQuad',
-
-          complete() {
+          complete: function complete() {
             $(this).remove();
           }
-
         });
         this.$sidenavOverlay = $();
       }
@@ -5181,11 +5163,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             _this3.removeMenu();
           } else {
+            _this3.menuOut = true;
             _this3.$sidenavOverlay = $('<div id="sidenav-overlay"></div>');
 
             _this3.$body.append(_this3.$sidenavOverlay);
 
-            let translateX = [];
+            var translateX = [];
 
             if (_this3.options.edge === 'left') {
               translateX = [0, -1 * _this3.options.MENU_WIDTH];
@@ -5194,7 +5177,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
 
             _this3.$menu.velocity({
-              translateX
+              translateX: translateX
             }, {
               duration: 300,
               queue: false,
@@ -5248,9 +5231,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 _this5.$menu.css('transform', 'translateX(0%)');
               }
             } else if (_this5.menuOut === false) {
-              let xValue = _this5.options.edge === 'left' ? '-100' : '100';
+              var xValue = _this5.options.edge === 'left' ? '-100' : '100';
 
-              _this5.$menu.css('transform', `translateX(${xValue}%)`);
+              _this5.$menu.css('transform', "translateX(".concat(xValue, "%)"));
             }
           });
         }
@@ -5258,7 +5241,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "setMenuWidth",
       value: function setMenuWidth() {
-        let $sidenavBg = $(`#${this.$menu.attr('id')}`).find('> .sidenav-bg');
+        var $sidenavBg = $("#".concat(this.$menu.attr('id'))).find('> .sidenav-bg');
 
         if (this.options.MENU_WIDTH !== MENU_WIDTH) {
           this.$menu.css('width', this.options.MENU_WIDTH);
@@ -5320,7 +5303,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 (function ($) {
   $.fn.collapsible = function (options) {
-    let defaults = {
+    var defaults = {
       accordion: undefined
     };
     options = $.extend(defaults, options);
@@ -5339,22 +5322,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           duration: 350,
           easing: 'easeOutQuart',
           queue: false,
-
-          complete() {
+          complete: function complete() {
             $(this).css('height', '');
           }
-
         });
       } else {
         object.siblings('.collapsible-body').stop(true, false).slideUp({
           duration: 350,
           easing: 'easeOutQuart',
           queue: false,
-
-          complete() {
+          complete: function complete() {
             $(this).css('height', '');
           }
-
         });
       }
 
@@ -5363,11 +5342,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         duration: 350,
         easing: 'easeOutQuart',
         queue: false,
-
-        complete() {
+        complete: function complete() {
           $(this).css('height', '');
         }
-
       });
     }
 
@@ -5383,28 +5360,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           duration: 350,
           easing: 'easeOutQuart',
           queue: false,
-
-          complete() {
+          complete: function complete() {
             $(this).css('height', '');
           }
-
         });
       } else {
         object.siblings('.collapsible-body').stop(true, false).slideUp({
           duration: 350,
           easing: 'easeOutQuart',
           queue: false,
-
-          complete() {
+          complete: function complete() {
             $(this).css('height', '');
           }
-
         });
       }
     }
 
     function isChildrenOfPanelHeader(object) {
-      let panelHeader = getPanelHeader(object);
+      var panelHeader = getPanelHeader(object);
       return panelHeader.length > 0;
     }
 
@@ -5413,9 +5386,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }
 
     return this.each(function () {
-      let $this = $(this);
-      let $panelHeaders = $(this).find('> li > .collapsible-header');
-      let collapsibleType = $this.data('collapsible'); // Turn off any existing event handlers
+      var $this = $(this);
+      var $panelHeaders = $(this).find('> li > .collapsible-header');
+      var collapsibleType = $this.data('collapsible'); // Turn off any existing event handlers
 
       $this.off('click.collapse', '.collapsible-header');
       $panelHeaders.off('click.collapse');
@@ -5423,7 +5396,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (options.accordion || collapsibleType === 'accordion' || collapsibleType === undefined) {
         $panelHeaders = $this.find('> li > .collapsible-header');
         $panelHeaders.on('click.collapse', function (e) {
-          let element = $(e.target);
+          var element = $(e.target);
 
           if (isChildrenOfPanelHeader(element)) {
             element = getPanelHeader(element);
@@ -5436,7 +5409,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       } else {
         $panelHeaders.each(function () {
           $(this).on('click.collapse', function (e) {
-            let element = $(e.target);
+            var element = $(e.target);
 
             if (isChildrenOfPanelHeader(element)) {
               element = getPanelHeader(element);
@@ -5459,27 +5432,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 "use strict";
 
 (function ($) {
-  let rangeWrapper = '.range-field';
-  let rangeType = 'input[type=range]:not(.custom-range)';
-  let thumbHtml = '<span class="thumb"><span class="value"></span></span>';
-  let rangeMousedown = false;
-  let left;
+  var rangeWrapper = '.range-field';
+  var rangeType = 'input[type=range]:not(.custom-range)';
+  var thumbHtml = '<span class="thumb"><span class="value"></span></span>';
+  var rangeMousedown = false;
+  var left;
 
-  let addThumb = function addThumb() {
-    let $thumb = $(thumbHtml);
+  var addThumb = function addThumb() {
+    var $thumb = $(thumbHtml);
     $(rangeType).after($thumb);
   };
 
   $(document).on('change', rangeType, function () {
-    let $thumb = $(this);
-    let $thumbValue = $thumb.siblings('.thumb').find('.value');
+    var $thumb = $(this);
+    var $thumbValue = $thumb.siblings('.thumb').find('.value');
     $thumbValue.html($thumb.val());
   });
   $(document).on('input mousedown touchstart', rangeType, function (e) {
-    let $this = $(this);
-    let $thumb = $this.siblings('.thumb');
-    let width = $this.outerWidth();
-    let noThumb = !$thumb.length;
+    var $this = $(this);
+    var $thumb = $this.siblings('.thumb');
+    var width = $this.outerWidth();
+    var noThumb = !$thumb.length;
 
     if (noThumb) {
       addThumb();
@@ -5503,7 +5476,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }
 
     if (e.type !== 'input') {
-      let isMobile = e.pageX === undefined || e.pageX === null;
+      var isMobile = e.pageX === undefined || e.pageX === null;
 
       if (isMobile) {
         left = e.originalEvent.touches[0].pageX - $(this).offset().left;
@@ -5527,8 +5500,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     $(this).removeClass('active');
   });
   $(document).on('mousemove touchmove', rangeWrapper, function (e) {
-    let $thumb = $(this).children('.thumb');
-    let left;
+    var $thumb = $(this).children('.thumb');
+    var left;
 
     if (rangeMousedown) {
       if (!$thumb.hasClass('active')) {
@@ -5543,7 +5516,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
       }
 
-      let isMobile = e.pageX === undefined || e.pageX === null;
+      var isMobile = e.pageX === undefined || e.pageX === null;
 
       if (isMobile) {
         left = e.originalEvent.touches[0].pageX - $(this).offset().left;
@@ -5551,7 +5524,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         left = e.pageX - $(this).offset().left;
       }
 
-      let width = $(this).outerWidth();
+      var width = $(this).outerWidth();
 
       if (left < 0) {
         left = 0;
@@ -5565,7 +5538,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   });
   $(document).on('mouseout touchleave', rangeWrapper, function () {
     if (!rangeMousedown) {
-      let $thumb = $(this).children('.thumb');
+      var $thumb = $(this).children('.thumb');
 
       if ($thumb.hasClass('active')) {
         $thumb.velocity({
@@ -5586,11 +5559,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 (function ($) {
   $(document).on('change', '.file-field input[type="file"]', function (e) {
-    let $this = $(e.target);
-    let $fileField = $this.closest('.file-field');
-    let $pathInput = $fileField.find('input.file-path');
-    let files = $this[0].files;
-    let fileNames = []; // files.forEach((file) => fileNames.push(file.name));
+    var $this = $(e.target);
+    var $fileField = $this.closest('.file-field');
+    var $pathInput = $fileField.find('input.file-path');
+    var files = $this[0].files;
+    var fileNames = []; // files.forEach((file) => fileNames.push(file.name));
 
     if (Array.isArray(files)) {
       files.forEach(function (file) {
@@ -5615,7 +5588,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 (function ($) {
-  let MaterialSelect =
+  var MaterialSelect =
   /*#__PURE__*/
   function () {
     function MaterialSelect($nativeSelect, options) {
@@ -5628,10 +5601,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.isRequired = Boolean(this.$nativeSelect.attr('required'));
       this.uuid = this._randomUUID();
       this.$selectWrapper = $('<div class="select-wrapper"></div>');
-      this.$materialOptionsList = $(`<ul id="select-options-${this.uuid}" class="dropdown-content select-dropdown w-100 ${this.isMultiple ? 'multiple-select-dropdown' : ''}"></ul>`);
+      this.$materialOptionsList = $("<ul id=\"select-options-".concat(this.uuid, "\" class=\"dropdown-content select-dropdown w-100 ").concat(this.isMultiple ? 'multiple-select-dropdown' : '', "\"></ul>"));
       this.$materialSelectInitialOption = $nativeSelect.find('option:selected').html() || $nativeSelect.find('option:first').html() || '';
       this.$nativeSelectChildren = this.$nativeSelect.children('option, optgroup');
-      this.$materialSelect = $(`<input type="text" class="select-dropdown" readonly="true" ${this.$nativeSelect.is(':disabled') ? 'disabled' : ''} data-activates="select-options-${this.uuid}" value=""/>`);
+      this.$materialSelect = $("<input type=\"text\" class=\"select-dropdown\" readonly=\"true\" ".concat(this.$nativeSelect.is(':disabled') ? 'disabled' : '', " data-activates=\"select-options-").concat(this.uuid, "\" value=\"\"/>"));
       this.$dropdownIcon = $('<span class="caret">&#9660;</span>');
       this.$searchInput = null;
       this.$toggleAll = $('<li class="select-toggle-all"><span><input type="checkbox" class="form-check-input"><label>Select all</label></span></li>');
@@ -5649,7 +5622,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     _createClass(MaterialSelect, [{
       key: "init",
       value: function init() {
-        let alreadyInitialized = Boolean(this.$nativeSelect.data('select-id'));
+        var alreadyInitialized = Boolean(this.$nativeSelect.data('select-id'));
 
         if (alreadyInitialized) {
           this._removeMaterialWrapper();
@@ -5662,7 +5635,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         this.$nativeSelect.data('select-id', this.uuid);
         this.$selectWrapper.addClass(this.$nativeSelect.attr('class'));
-        let sanitizedLabelHtml = this.$materialSelectInitialOption.replace(/"/g, '&quot;');
+        var sanitizedLabelHtml = this.$materialSelectInitialOption.replace(/"/g, '&quot;');
         this.$materialSelect.val(sanitizedLabelHtml);
         this.renderMaterialSelect();
         this.bindEvents();
@@ -5674,11 +5647,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_removeMaterialWrapper",
       value: function _removeMaterialWrapper() {
-        let currentUuid = this.$nativeSelect.data('select-id');
+        var currentUuid = this.$nativeSelect.data('select-id');
         this.$nativeSelect.parent().find('span.caret').remove();
         this.$nativeSelect.parent().find('input').remove();
         this.$nativeSelect.unwrap();
-        $(`ul#select-options-${currentUuid}`).remove();
+        $("ul#select-options-".concat(currentUuid)).remove();
       }
     }, {
       key: "renderMaterialSelect",
@@ -5705,14 +5678,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         if (this.isMultiple) {
           this.$nativeSelect.find('option:selected:not(:disabled)').each(function (i, element) {
-            let index = $(element).index();
+            var index = $(element).index();
 
             _this._toggleSelectedValue(index);
 
             _this.$materialOptionsList.find('li:not(.optgroup):not(.select-toggle-all)').eq(index).find(':checkbox').prop('checked', true);
           });
         } else {
-          let index = this.$nativeSelect.find('option:selected').index();
+          var index = this.$nativeSelect.find('option:selected').index();
           this.$materialOptionsList.find('li').eq(index).addClass('active');
         }
 
@@ -5755,8 +5728,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "appendSearchInputOption",
       value: function appendSearchInputOption() {
-        let placeholder = this.$nativeSelect.attr('searchable');
-        this.$searchInput = $(`<span class="search-wrap ml-2"><div class="md-form mt-0"><input type="text" class="search form-control w-100 d-block" placeholder="${placeholder}"></div></span>`);
+        var placeholder = this.$nativeSelect.attr('searchable');
+        this.$searchInput = $("<span class=\"search-wrap ml-2\"><div class=\"md-form mt-0\"><input type=\"text\" class=\"search form-control w-100 d-block\" placeholder=\"".concat(placeholder, "\"></div></span>"));
         this.$materialOptionsList.append(this.$searchInput);
       }
     }, {
@@ -5775,16 +5748,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         var _this2 = this;
 
         this.$nativeSelectChildren.each(function (index, option) {
-          let $this = $(option);
+          var $this = $(option);
 
           if ($this.is('option')) {
             _this2.buildSingleOption($this, _this2.isMultiple ? 'multiple' : '');
           } else if ($this.is('optgroup')) {
-            let $materialOptgroup = $(`<li class="optgroup"><span>${$this.attr('label')}</span></li>`);
+            var $materialOptgroup = $("<li class=\"optgroup\"><span>".concat($this.attr('label'), "</span></li>"));
 
             _this2.$materialOptionsList.append($materialOptgroup);
 
-            let $optgroupOptions = $this.children('option');
+            var $optgroupOptions = $this.children('option');
             $optgroupOptions.each(function (index, optgroupOption) {
               _this2.buildSingleOption($(optgroupOption), 'optgroup-option');
             });
@@ -5794,14 +5767,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "buildSingleOption",
       value: function buildSingleOption($nativeSelectChild, type) {
-        let disabled = $nativeSelectChild.is(':disabled') ? 'disabled' : '';
-        let optgroupClass = type === 'optgroup-option' ? 'optgroup-option' : '';
-        let iconUrl = $nativeSelectChild.data('icon');
-        let fa = $nativeSelectChild.data('fa') ? `<i class="fa fa-${$nativeSelectChild.data('fa')}"></i>` : '';
-        let classes = $nativeSelectChild.attr('class');
-        let iconHtml = iconUrl ? `<img alt="" src="${iconUrl}" class="${classes}">` : '';
-        let checkboxHtml = this.isMultiple ? `<input type="checkbox" class="form-check-input" ${disabled}/><label></label>` : '';
-        this.$materialOptionsList.append($(`<li class="${disabled} ${optgroupClass}">${iconHtml}<span class="filtrable">${checkboxHtml} ${fa} ${$nativeSelectChild.html()}</span></li>`));
+        var disabled = $nativeSelectChild.is(':disabled') ? 'disabled' : '';
+        var optgroupClass = type === 'optgroup-option' ? 'optgroup-option' : '';
+        var iconUrl = $nativeSelectChild.data('icon');
+        var fa = $nativeSelectChild.data('fas') ? "<i class=\"fas fa-".concat($nativeSelectChild.data('fas'), "\"></i>") : '';
+        var classes = $nativeSelectChild.attr('class');
+        var iconHtml = iconUrl ? "<img alt=\"\" src=\"".concat(iconUrl, "\" class=\"").concat(classes, "\">") : '';
+        var checkboxHtml = this.isMultiple ? "<input type=\"checkbox\" class=\"form-check-input\" ".concat(disabled, "/><label></label>") : '';
+        this.$materialOptionsList.append($("<li class=\"".concat(disabled, " ").concat(optgroupClass, "\">").concat(iconHtml, "<span class=\"filtrable\">").concat(checkboxHtml, " ").concat(fa, " ").concat($nativeSelectChild.html(), "</span></li>")));
       }
     }, {
       key: "enableValidation",
@@ -5818,7 +5791,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
 
         if (this.$nativeSelect.attr('style').indexOf('inline!important') === -1) {
-          this.$nativeSelect.attr('style', `${this.$nativeSelect.attr('style')} display: inline!important;`);
+          this.$nativeSelect.attr('style', "".concat(this.$nativeSelect.attr('style'), " display: inline!important;"));
         }
 
         this.$nativeSelect.attr('tabindex', -1);
@@ -5829,19 +5802,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       value: function bindEvents() {
         var _this3 = this;
 
-        let config = {
+        var config = {
           attributes: true,
           childList: true,
           characterData: true,
           subtree: true
         };
-        let observer = new MutationObserver(this._onMutationObserverChange.bind(this));
+        var observer = new MutationObserver(this._onMutationObserverChange.bind(this));
         observer.observe(this.$nativeSelect.get(0), config);
         observer.customId = this.uuid;
         observer.customStatus = 'observing';
         MaterialSelect.clearMutationObservers();
         MaterialSelect.mutationObservers.push(observer);
-        let $saveSelectBtn = this.$nativeSelect.parent().find('button.btn-save');
+        var $saveSelectBtn = this.$nativeSelect.parent().find('button.btn-save');
         $saveSelectBtn.on('click', this._onSaveSelectBtnClick);
         this.$materialSelect.on('focus', this._onMaterialSelectFocus.bind(this));
         this.$materialSelect.on('click', this._onMaterialSelectClick.bind(this));
@@ -5867,7 +5840,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       key: "_onMutationObserverChange",
       value: function _onMutationObserverChange(mutationsList) {
         mutationsList.forEach(function (mutation) {
-          let $select = $(mutation.target).closest('select');
+          var $select = $(mutation.target).closest('select');
 
           if ($select.data('stop-refresh') !== true && (mutation.type === 'childList' || mutation.type === 'attributes' && $(mutation.target).is('option'))) {
             MaterialSelect.clearMutationObservers();
@@ -5885,20 +5858,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       key: "_onEachMaterialOptionClick",
       value: function _onEachMaterialOptionClick(materialOptionIndex, materialOption, e) {
         e.stopPropagation();
-        let $this = $(materialOption);
+        var $this = $(materialOption);
 
         if ($this.hasClass('disabled') || $this.hasClass('optgroup')) {
           return;
         }
 
-        let selected = true;
+        var selected = true;
 
         if (this.isMultiple) {
           $this.find('input[type="checkbox"]').prop('checked', function (index, oldPropertyValue) {
             return !oldPropertyValue;
           });
-          let hasOptgroup = Boolean(this.$nativeSelect.find('optgroup').length);
-          let thisIndex = this._isToggleAllPresent() ? $this.index() - 1 : $this.index();
+          var hasOptgroup = Boolean(this.$nativeSelect.find('optgroup').length);
+          var thisIndex = this._isToggleAllPresent() ? $this.index() - 1 : $this.index();
 
           if (this.isSearchable && hasOptgroup) {
             selected = this._toggleSelectedValue(thisIndex - $this.prevAll('.optgroup').length - 1);
@@ -5937,7 +5910,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_triggerChangeOnNativeSelect",
       value: function _triggerChangeOnNativeSelect() {
-        let keyboardEvt = new KeyboardEvent('change', {
+        var keyboardEvt = new KeyboardEvent('change', {
           bubbles: true,
           cancelable: true
         });
@@ -5946,7 +5919,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_onMaterialSelectFocus",
       value: function _onMaterialSelectFocus(e) {
-        let $this = $(e.target);
+        var $this = $(e.target);
 
         if ($('ul.select-dropdown').not(this.$materialOptionsList.get(0)).is(':visible')) {
           $('input.select-dropdown').trigger('close');
@@ -5954,8 +5927,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         if (!this.$materialOptionsList.is(':visible')) {
           $this.trigger('open', ['focus']);
-          let label = $this.val();
-          let $selectedOption = this.$materialOptionsList.find('li').filter(function () {
+          var label = $this.val();
+          var $selectedOption = this.$materialOptionsList.find('li').filter(function () {
             return $(this).text().toLowerCase() === label.toLowerCase();
           })[0];
 
@@ -5970,7 +5943,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_onMaterialSelectBlur",
       value: function _onMaterialSelectBlur(e) {
-        let $this = $(e);
+        var $this = $(e);
 
         if (!this.isMultiple && !this.isSearchable) {
           $this.trigger('close');
@@ -5986,7 +5959,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_onEachMaterialOptionMousedown",
       value: function _onEachMaterialOptionMousedown(e) {
-        let option = e.target;
+        var option = e.target;
 
         if ($('.modal-content').find(this.$materialOptionsList).length) {
           if (option.scrollHeight > option.offsetHeight) {
@@ -5997,7 +5970,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_onHTMLClick",
       value: function _onHTMLClick(e) {
-        if (!$(e.target).closest(`#select-options-${this.uuid}`).length) {
+        if (!$(e.target).closest("#select-options-".concat(this.uuid)).length) {
           this.$materialSelect.trigger('close');
         }
       }
@@ -6006,11 +5979,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       value: function _onToggleAllClick() {
         var _this4 = this;
 
-        let checkbox = $(this.$toggleAll).find('input[type="checkbox"]').first();
-        let state = !$(checkbox).prop('checked');
+        var checkbox = $(this.$toggleAll).find('input[type="checkbox"]').first();
+        var state = !$(checkbox).prop('checked');
         $(checkbox).prop('checked', state);
         this.$materialOptionsList.find('li:not(.optgroup):not(.disabled):not(.select-toggle-all)').each(function (materialOptionIndex, materialOption) {
-          let $optionCheckbox = $(materialOption).find('input[type="checkbox"]');
+          var $optionCheckbox = $(materialOption).find('input[type="checkbox"]');
 
           if (state && $optionCheckbox.is(':checked') || !state && !$optionCheckbox.is(':checked')) {
             return;
@@ -6045,13 +6018,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_onMaterialSelectKeydown",
       value: function _onMaterialSelectKeydown(e) {
-        let $this = $(e.target);
-        let isTab = e.which === this.keyCodes.tab;
-        let isEsc = e.which === this.keyCodes.esc;
-        let isEnter = e.which === this.keyCodes.enter;
-        let isArrowUp = e.which === this.keyCodes.arrowUp;
-        let isArrowDown = e.which === this.keyCodes.arrowDown;
-        let isMaterialSelectVisible = this.$materialOptionsList.is(':visible');
+        var $this = $(e.target);
+        var isTab = e.which === this.keyCodes.tab;
+        var isEsc = e.which === this.keyCodes.esc;
+        var isEnter = e.which === this.keyCodes.enter;
+        var isArrowUp = e.which === this.keyCodes.arrowUp;
+        var isArrowDown = e.which === this.keyCodes.arrowDown;
+        var isMaterialSelectVisible = this.$materialOptionsList.is(':visible');
 
         if (isTab) {
           this._handleTabKey($this);
@@ -6086,8 +6059,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_handleEnterKey",
       value: function _handleEnterKey(materialSelect) {
-        let $materialSelect = $(materialSelect);
-        let $activeOption = this.$materialOptionsList.find('li.selected:not(.disabled)');
+        var $materialSelect = $(materialSelect);
+        var $activeOption = this.$materialOptionsList.find('li.selected:not(.disabled)');
         $activeOption.trigger('click');
 
         if (!this.isMultiple) {
@@ -6097,11 +6070,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_handleArrowDownKey",
       value: function _handleArrowDownKey() {
-        let $firstOption = this.$materialOptionsList.find('li').not('.disabled').not('.select-toggle-all').first();
-        let $lastOption = this.$materialOptionsList.find('li').not('.disabled').not('.select-toggle-all').last();
-        let anySelected = this.$materialOptionsList.find('li.selected').length > 0;
-        let $currentOption = anySelected ? this.$materialOptionsList.find('li.selected') : $firstOption;
-        let $matchedMaterialOption = $currentOption.is($lastOption) || !anySelected ? $currentOption : $currentOption.next('li:not(.disabled)');
+        var $firstOption = this.$materialOptionsList.find('li').not('.disabled').not('.select-toggle-all').first();
+        var $lastOption = this.$materialOptionsList.find('li').not('.disabled').not('.select-toggle-all').last();
+        var anySelected = this.$materialOptionsList.find('li.selected').length > 0;
+        var $currentOption = anySelected ? this.$materialOptionsList.find('li.selected') : $firstOption;
+        var $matchedMaterialOption = $currentOption.is($lastOption) || !anySelected ? $currentOption : $currentOption.next('li:not(.disabled)');
 
         this._selectSingleOption($matchedMaterialOption);
 
@@ -6111,11 +6084,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_handleArrowUpKey",
       value: function _handleArrowUpKey() {
-        let $firstOption = this.$materialOptionsList.find('li').not('.disabled').not('.select-toggle-all').first();
-        let $lastOption = this.$materialOptionsList.find('li').not('.disabled').not('.select-toggle-all').last();
-        let anySelected = this.$materialOptionsList.find('li.selected').length > 0;
-        let $currentOption = anySelected ? this.$materialOptionsList.find('li.selected') : $lastOption;
-        let $matchedMaterialOption = $currentOption.is($firstOption) || !anySelected ? $currentOption : $currentOption.prev('li:not(.disabled)');
+        var $firstOption = this.$materialOptionsList.find('li').not('.disabled').not('.select-toggle-all').first();
+        var $lastOption = this.$materialOptionsList.find('li').not('.disabled').not('.select-toggle-all').last();
+        var anySelected = this.$materialOptionsList.find('li.selected').length > 0;
+        var $currentOption = anySelected ? this.$materialOptionsList.find('li.selected') : $lastOption;
+        var $matchedMaterialOption = $currentOption.is($firstOption) || !anySelected ? $currentOption : $currentOption.prev('li:not(.disabled)');
 
         this._selectSingleOption($matchedMaterialOption);
 
@@ -6125,7 +6098,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_handleEscKey",
       value: function _handleEscKey(materialSelect) {
-        let $materialSelect = $(materialSelect);
+        var $materialSelect = $(materialSelect);
         $materialSelect.trigger('close');
       }
     }, {
@@ -6133,16 +6106,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       value: function _handleLetterKey(e) {
         var _this5 = this;
 
-        let filterQueryString = '';
-        let letter = String.fromCharCode(e.which).toLowerCase();
-        let nonLetters = Object.keys(this.keyCodes).map(function (key) {
+        var filterQueryString = '';
+        var letter = String.fromCharCode(e.which).toLowerCase();
+        var nonLetters = Object.keys(this.keyCodes).map(function (key) {
           return _this5.keyCodes[key];
         });
-        let isLetterSearchable = letter && nonLetters.indexOf(e.which) === -1;
+        var isLetterSearchable = letter && nonLetters.indexOf(e.which) === -1;
 
         if (isLetterSearchable) {
           filterQueryString += letter;
-          let $matchedMaterialOption = this.$materialOptionsList.find('li').filter(function () {
+          var $matchedMaterialOption = this.$materialOptionsList.find('li').filter(function () {
             return $(this).text().toLowerCase().indexOf(filterQueryString) !== -1;
           }).first();
 
@@ -6158,15 +6131,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_onSearchInputKeyup",
       value: function _onSearchInputKeyup(e) {
-        let $this = $(e.target);
-        let $ul = $this.closest('ul');
-        let searchValue = $this.val();
-        let $options = $ul.find('li span.filtrable');
+        var $this = $(e.target);
+        var $ul = $this.closest('ul');
+        var searchValue = $this.val();
+        var $options = $ul.find('li span.filtrable');
         $options.each(function () {
-          let $option = $(this);
+          var $option = $(this);
 
           if (typeof this.outerHTML === 'string') {
-            let liValue = this.textContent.toLowerCase();
+            var liValue = this.textContent.toLowerCase();
 
             if (liValue.includes(searchValue.toLowerCase())) {
               $option.show().parent().show();
@@ -6184,9 +6157,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_updateToggleAllOption",
       value: function _updateToggleAllOption() {
-        let $allOptionsButToggleAll = this.$materialOptionsList.find('li').not('.select-toggle-all, .disabled').find('[type=checkbox]');
-        let $checkedOptionsButToggleAll = $allOptionsButToggleAll.filter(':checked');
-        let isToggleAllChecked = this.$toggleAll.find('[type=checkbox]').is(':checked');
+        var $allOptionsButToggleAll = this.$materialOptionsList.find('li').not('.select-toggle-all, .disabled').find('[type=checkbox]');
+        var $checkedOptionsButToggleAll = $allOptionsButToggleAll.filter(':checked');
+        var isToggleAllChecked = this.$toggleAll.find('[type=checkbox]').is(':checked');
 
         if ($checkedOptionsButToggleAll.length === $allOptionsButToggleAll.length && !isToggleAllChecked) {
           this.$toggleAll.find('[type=checkbox]').prop('checked', true);
@@ -6197,8 +6170,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_toggleSelectedValue",
       value: function _toggleSelectedValue(optionIndex) {
-        let selectedValueIndex = this.valuesSelected.indexOf(optionIndex);
-        let isSelected = selectedValueIndex !== -1;
+        var selectedValueIndex = this.valuesSelected.indexOf(optionIndex);
+        var isSelected = selectedValueIndex !== -1;
 
         if (!isSelected) {
           this.valuesSelected.push(optionIndex);
@@ -6223,22 +6196,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_selectOption",
       value: function _selectOption(newOption) {
-        let option = $(newOption);
+        var option = $(newOption);
         option.addClass('selected');
       }
     }, {
       key: "_setValueToMaterialSelect",
       value: function _setValueToMaterialSelect() {
-        let value = '';
-        let itemsCount = this.valuesSelected.length;
+        var value = '';
+        var itemsCount = this.valuesSelected.length;
 
-        for (let i = 0; i < itemsCount; i++) {
-          let text = this.$nativeSelect.find('option').eq(this.valuesSelected[i]).text();
-          value += `, ${text}`;
+        for (var i = 0; i < itemsCount; i++) {
+          var text = this.$nativeSelect.find('option').eq(this.valuesSelected[i]).text();
+          value += ",".concat(text);
         }
 
         if (itemsCount >= 5) {
-          value = `${itemsCount} options selected`;
+          value = "".concat(itemsCount, " options selected");
         } else {
           value = value.substring(2);
         }
@@ -6252,9 +6225,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "_randomUUID",
       value: function _randomUUID() {
-        let d = new Date().getTime();
+        var d = new Date().getTime();
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-          let r = (d + Math.random() * 16) % 16 | 0;
+          var r = (d + Math.random() * 16) % 16 | 0;
           d = Math.floor(d / 16);
           return (c === 'x' ? r : r & 0x3 | 0x8).toString(16);
         });
@@ -6274,7 +6247,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
   $.fn.materialSelect = function (callback) {
     $(this).not('.browser-default').not('.custom-select').each(function () {
-      let materialSelect = new MaterialSelect($(this), callback);
+      var materialSelect = new MaterialSelect($(this), callback);
       materialSelect.init();
     });
   };
@@ -6290,7 +6263,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (this.data('stop-refresh') !== true && this.hasClass('mdb-select') && this.hasClass('initialized') && !this.hasClass('browser-default') && !this.hasClass('custom-select')) {
         MaterialSelect.clearMutationObservers();
         this.materialSelect('destroy');
-        let ret = originalVal.call(this, value);
+        var ret = originalVal.call(this, value);
         this.materialSelect();
         return ret;
       }
@@ -6316,9 +6289,9 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 (function ($) {
-  let DEFAULT_TOP_SPACING = 0;
+  var DEFAULT_TOP_SPACING = 0;
 
-  let Sticky =
+  var Sticky =
   /*#__PURE__*/
   function () {
     function Sticky(element, options) {
@@ -6327,7 +6300,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.defaults = {
         topSpacing: DEFAULT_TOP_SPACING,
         zIndex: false,
-        stopper: '.sticky-stopper',
+        stopper: '#footer',
         stickyClass: false,
         startScrolling: 'top',
         minWidth: false
@@ -6340,11 +6313,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.elementHeight = this.$element.outerHeight(true);
       this.$placeholder = $('<div class="sticky-placeholder"></div>');
       this.scrollTop = 0;
-
-      this._getPushPoint();
-
-      this._getStopperPosition();
-
+      this.setPushPoint();
+      this.setStopperPosition();
       this.bindEvents();
     }
 
@@ -6356,7 +6326,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "bindEvents",
       value: function bindEvents() {
-        this.$window.on('scroll resize', this.init.bind(this));
+        this.$window.on('resize', this.handleResize.bind(this));
+        this.$window.on('scroll', this.init.bind(this));
       }
     }, {
       key: "hasZIndex",
@@ -6366,25 +6337,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "hasStopper",
       value: function hasStopper() {
-        return !!($(this.options.stopper).length || typeof this.options.stopper === 'number');
+        return $(this.options.stopper).length || typeof this.options.stopper === 'number';
       }
     }, {
-      key: "_getStopperPosition",
-      value: function _getStopperPosition() {
+      key: "isScreenHeightEnough",
+      value: function isScreenHeightEnough() {
+        return this.$element.outerHeight() + this.options.topSpacing < this.$window.height();
+      }
+    }, {
+      key: "setStopperPosition",
+      value: function setStopperPosition() {
         if (typeof this.options.stopper === 'string') {
-          this.stopPoint = $(this.stopper).offset().top;
+          this.stopPoint = $(this.stopper).offset().top - this.options.topSpacing;
         } else if (typeof this.options.stopper === 'number') {
           this.stopPoint = this.options.stopper;
         }
       }
     }, {
-      key: "_getPushPoint",
-      value: function _getPushPoint() {
-        if (this.options.startScrolling === 'bottom') {
-          this.$pushPoint = this.$element.offset().top + this.$element.outerHeight() - this.$window.innerHeight();
+      key: "setPushPoint",
+      value: function setPushPoint() {
+        if (this.options.startScrolling === 'bottom' && !this.isScreenHeightEnough()) {
+          this.$pushPoint = this.$element.offset().top + this.$element.outerHeight(true) - this.$window.height();
         } else {
-          this.$pushPoint = this.$element.offset().top - this.options.topSpacing - this.elementHeight;
+          this.$pushPoint = this.$element.offset().top - this.options.topSpacing;
         }
+      }
+    }, {
+      key: "handleResize",
+      value: function handleResize() {
+        this.elementWidth = this.$element.outerWidth();
+        this.elementHeight = this.$element.outerHeight(true);
+        this.setPushPoint();
+        this.setStopperPosition();
+        this.init();
       }
     }, {
       key: "init",
@@ -6393,21 +6378,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return false;
         }
 
-        this.scrollTop = this.$window.scrollTop();
-
-        if (this.$pushPoint < this.scrollTop) {
-          this._appendPlaceholder();
-
-          this._stickyStart();
+        if (this.options.startScrolling === 'bottom' && !this.isScreenHeightEnough()) {
+          this.scrollTop = this.$window.scrollTop() + this.$window.height();
         } else {
-          this._stickyEnd();
+          this.scrollTop = this.$window.scrollTop();
         }
 
-        this._stop();
+        if (this.$pushPoint < this.scrollTop) {
+          this.appendPlaceholder();
+          this.stickyStart();
+        } else {
+          this.stickyEnd();
+        }
+
+        if (this.$window.scrollTop() > this.$pushPoint) {
+          this.stop();
+        } else {
+          this.stickyEnd();
+        }
       }
     }, {
-      key: "_appendPlaceholder",
-      value: function _appendPlaceholder() {
+      key: "appendPlaceholder",
+      value: function appendPlaceholder() {
         this.$element.after(this.$placeholder);
         this.$placeholder.css({
           width: this.elementWidth,
@@ -6415,21 +6407,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
       }
     }, {
-      key: "_stickyStart",
-      value: function _stickyStart() {
+      key: "stickyStart",
+      value: function stickyStart() {
         if (this.options.stickyClass) {
           this.$element.addClass(this.options.stickyClass);
-        }
+        } // @see: https://stackoverflow.com/a/4370047
 
+
+        this.$element.get(0).style.overflow = 'scroll';
+        var scrollHeight = this.$element.get(0).scrollHeight;
+        this.$element.get(0).style.overflow = '';
         this.$element.css({
           'position': 'fixed',
-          'width': this.elementWidth
+          'width': this.elementWidth,
+          'height': scrollHeight
         });
 
-        if (this.options.startScrolling === 'bottom') {
-          let distanceFromTop = this.$window.innerHeight() - this.$element.height() - this.options.topSpacing / 2;
+        if (this.options.startScrolling === 'bottom' && !this.isScreenHeightEnough()) {
           this.$element.css({
-            top: distanceFromTop
+            bottom: 0,
+            top: ''
           });
         } else {
           this.$element.css({
@@ -6444,8 +6441,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
       }
     }, {
-      key: "_stickyEnd",
-      value: function _stickyEnd() {
+      key: "stickyEnd",
+      value: function stickyEnd() {
         if (this.options.stickyClass) {
           this.$element.removeClass(this.options.stickyClass);
         }
@@ -6457,17 +6454,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
       }
     }, {
-      key: "_stop",
-      value: function _stop() {
-        if (this.stopPoint < $(this.$element).offset().top + this.$element.height()) {
-          let diff = this.stopPoint - ($(this.$element).offset().top + this.$element.height()) + this.options.topSpacing;
-
-          if (this.options.startScrolling === 'bottom') {
-            diff = this.stopPoint - (this.scrollTop + this.elementHeight);
-          }
-
+      key: "stop",
+      value: function stop() {
+        if (this.stopPoint < $(this.$element).offset().top + this.$element.outerHeight(true)) {
           this.$element.css({
-            top: diff
+            position: 'absolute',
+            bottom: 0,
+            top: ''
           });
         }
       }
@@ -6478,7 +6471,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
   $.fn.sticky = function (options) {
     return this.each(function () {
-      new Sticky($(this), options);
+      var $self = $(this);
+      $(window).on('load', function () {
+        var sticky = new Sticky($self, options);
+        sticky.init();
+      });
     });
   };
 })(jQuery);
@@ -6488,18 +6485,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 $.fn.mdb_autocomplete = function (options) {
   // Default options
-  let defaults = {
+  var defaults = {
     data: {}
   };
-  let ENTER_CHAR_CODE = 13; // Get options
+  var ENTER_CHAR_CODE = 13; // Get options
 
   options = $.extend(defaults, options);
   return this.each(function () {
     // text input
-    let $input = $(this);
-    let $autocomplete; // assign data from options
+    var $input = $(this);
+    var $autocomplete; // assign data from options
 
-    let data = options.data;
+    var data = options.data;
 
     if (Object.keys(data).length) {
       $autocomplete = $('<ul class="mdb-autocomplete-wrap"></ul>');
@@ -6509,14 +6506,14 @@ $.fn.mdb_autocomplete = function (options) {
 
     $input.on('keyup', function (e) {
       // get value from input
-      let q = $input.val();
+      var q = $input.val();
       $autocomplete.empty(); // check if input isn't empty
 
       if (q.length) {
-        for (let item in data) {
+        for (var item in data) {
           // check if item contains value that we're looking for
           if (data[item].toLowerCase().indexOf(q.toLowerCase()) !== -1) {
-            let option = $(`<li>${data[item]}</li>`);
+            var option = $("<li>".concat(data[item], "</li>"));
             $autocomplete.append(option);
           }
         }
@@ -6554,23 +6551,24 @@ $.fn.mdb_autocomplete = function (options) {
     office@mdbootstrap.com
 */
 
-$('body').on('shown.bs.modal', '.modal', function() {
-    if($('.modal-backdrop').length) {
-    } else {
+(function($){
+  $('body').on('shown.bs.modal', '.modal', function() {
+    if(!$('.modal-backdrop').length) {
 
-        $modal_dialog = $(this).children('.modal-dialog')
+      $modal_dialog = $(this).children('.modal-dialog')
 
-        if($modal_dialog.hasClass('modal-side')) {
-            $(this).addClass('modal-scrolling');
-            $('body').addClass('scrollable');
-        }
+      if($modal_dialog.hasClass('modal-side')) {
+        $(this).addClass('modal-scrolling');
+        $('body').addClass('scrollable');
+      }
 
-        if($modal_dialog.hasClass('modal-frame')) {
-            $(this).addClass('modal-content-clickable');
-            $('body').addClass('scrollable');
-        }
+      if($modal_dialog.hasClass('modal-frame')) {
+        $(this).addClass('modal-content-clickable');
+        $('body').addClass('scrollable');
+      }
     }
-});
-$('body').on('hidden.bs.modal', '.modal', function() {
+  });
+  $('body').on('hidden.bs.modal', '.modal', function() {
     $('body').removeClass('scrollable');
-});
+  });
+})(jQuery);

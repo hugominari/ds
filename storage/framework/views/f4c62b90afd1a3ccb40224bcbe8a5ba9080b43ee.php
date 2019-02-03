@@ -1,8 +1,6 @@
 <?php $__env->startPush('styles'); ?>
 	<?php echo e(Html::style('plugins/datatables/DataTables-1.10.18/css/jquery.dataTables.min.css')); ?>
 
-	<?php echo e(Html::style('css/addons/datatables.min.css')); ?>
-
 <?php $__env->stopPush(); ?>
 
 <?php $__env->startPush('scripts'); ?>

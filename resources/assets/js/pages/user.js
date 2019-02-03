@@ -4,13 +4,30 @@
 
 $(document).ready(function()
 {
-	setTimeout(
-		function()
-		{
-			loadPermissions(dev.RoleId, '.permissions-box', dev.userId);
-		}, 500
-	);
-	
+	if(!!dev.editing || !!dev.readOnly)
+	{
+		var $role = dev.RoleId || $('#profile').val();
+		var $userId = $('form').attr('data-id') || dev.userId;
+		
+    setTimeout(
+        function()
+        {
+          loadPermissions($role, '.permissions-box', $userId);
+        }, 400
+    );
+	}
+  
+  if(dev.readOnly){
+    setTimeout(
+        function()
+        {
+          let perms = $(".permissions-box input");
+          $.each(perms, function(index, value) {
+            $(this).prop('disabled', true);
+          });
+        }, 900
+    );
+  }
 });
 
 $('body').on('change', '#profile', function()

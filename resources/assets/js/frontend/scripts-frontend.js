@@ -187,6 +187,8 @@ $(document).ready(function (){
 		}, 1000);
 	});
 	
+	$('.text-content img').removeAttr('style').addClass('img-fluid');
+	
 	$(document).scroll(function(){
 		var scrollPosition = $(window).height() + $(window).scrollTop();
 		var init = $('main').offset().top + 100;

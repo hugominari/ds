@@ -47,8 +47,11 @@
 						</div>
 						<div class="form-row">
 							<div class="col-md-6">
-								
-								{{ Form::cDate('birth_date', ($member->birth_date->format('d/m/Y') ?? '' ), 'Data de Nascimento') }}
+								@if(!empty($member->birth_date))
+									{{ Form::cDate('birth_date', $member->birth_date->format('d/m/Y'), 'Data de Nascimento') }}
+								@else
+									{{ Form::cDate('birth_date', null, 'Data de Nascimento') }}
+								@endif
 							</div>
 							<div class="col-md-6">
 								{{ Form::cText('cpf', $member->cpf, 'CPF', ['class' => 'form-control cpf']) }}

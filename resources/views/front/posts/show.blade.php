@@ -24,7 +24,7 @@
                             <p>{{ $post->created_at->format('d/m/Y') }}</p>
                         </div>
                     </div>
-                    <div class="mt-5">
+                    <div class="mt-5 text-content">
                        {!! $post->description !!}
                     </div>
                 </div>

@@ -231,20 +231,24 @@ class Controller extends BaseController
 			if(Storage::exists($path))
 			{
 				//Get informations
-				$mime = Storage::mimeType($path);
-				$lastModified = Storage::lastModified($path);
-				$date = "?{$lastModified}";
-				
-				//Set the result
-				$result = [
-					'filename' => $filename,
-					'size' => Storage::size($path),
-					'date' => $lastModified,
-					'mime' => $mime,
-					'url' => url('/') . Storage::url($path) . $date,
-					'path' => $path
-				];
-				
+                
+                //Get informations
+                $mime = Storage::mimeType($path);
+                $extension_pos = strrpos($path, '.');
+                $lastModified = Storage::lastModified($path);
+                $date = "?{$lastModified}";
+                $url =  url('/') . Storage::url($path) . $date;
+                
+                //Set the result
+                $result = [
+                    'filename' => $filename,
+                    'size' => Storage::size($path),
+                    'date' => $lastModified,
+                    'mime' => $mime,
+                    'url' => $url,
+                    'path' => $path,
+                ];
+			
 				//If file is image
 				if(str_contains($mime, 'image/'))
 				{
@@ -253,8 +257,13 @@ class Controller extends BaseController
 					//Verify thumbs
 					$thumbSm = substr($path, 0, $extension_pos) . '-thumb-sm' . substr($path, $extension_pos);
 					$thumbLg = substr($path, 0, $extension_pos) . '-thumb-lg' . substr($path, $extension_pos);
+                    
+                    $image = Image::make(Storage::path($path));
+                    $imageWidth = $image->width();
+                    $imageHeight = $image->height();
 					
 					$result += [
+                        'dimensions' => "{$imageWidth}x{$imageHeight}",
 						'url_sm' => url('/') . Storage::url($thumbSm) . $date,
 						'url_lg' => url('/') . Storage::url($thumbLg) . $date
 					];
@@ -479,7 +488,7 @@ class Controller extends BaseController
 						->save($newImagePath);
 				}
                 
-                Storage::delete($fullPath);
+                Storage::delete($targetFullPath);
 			}
             
             // Move the file from temp to final folder

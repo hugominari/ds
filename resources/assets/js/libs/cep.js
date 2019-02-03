@@ -2,7 +2,7 @@
  * Method that will get address
  * @event Jquery#OnBlur
  */
-$(document).on('focusout', 'input.cep', function (ev) {
+$(document).on('keyup', 'input.cep', function (ev) {
     var cep = $(this);
     var length = cep.val().length;
 

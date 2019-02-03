@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Mandatory;
 use App\Models\Member;
 use App\Models\MemberMandatory;
 use Illuminate\Foundation\Http\FormRequest;
@@ -30,7 +31,7 @@ class MandatoryRequest extends FormRequest
 	    $id = isset($params['id']) ? $params['id'] : '';
 	    
 	    if(!empty($id))
-	        $mandatory = MemberMandatory::findOrFail($id);
+	        $mandatory = Mandatory::findOrFail($id);
     
         $mandatoryId = isset($mandatory) ? ",{$mandatory->id}" : null;
 	

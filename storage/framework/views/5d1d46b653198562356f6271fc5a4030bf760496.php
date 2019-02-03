@@ -33,35 +33,33 @@
         </section>
         
         <section class="magazine-section my-5">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <?php if(!empty($others)): ?>
-                            <?php $__currentLoopData = $others; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $other): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="single-news mb-4 wow fadeInUp">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="view overlay rounded z-depth-1 mb-4">
-                                                <a href="<?php echo e(route('events.show', ['id' => $other->id])); ?>">
-                                                    <img class="img-fluid" src="<?php echo e($other->image->url_sm); ?>" alt="<?php echo e($other->title); ?>">
-                                                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p class="font-weight-bold dark-grey-text"><?php echo e($other->date->format('d/m/Y')); ?></p>
-                                            <div class="d-flex justify-content-between">
-                                                <div class="col-11 text-truncate pl-0 mb-3">
-                                                    <a href="<?php echo e(route('events.show', ['id' => $other->id])); ?>" class="dark-grey-text"><?php echo e($other->title); ?></a>
-                                                </div>
-                                                <a href="<?php echo e(route('events.show', ['id' => $other->id])); ?>"><i class="fa fa-angle-double-right"></i></a>
-                                            </div>
-                                        </div>
+            <div class="row pt-5">
+                <?php if(!empty($others)): ?>
+                    <?php $__currentLoopData = $others; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $other): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="single-news mb-4 wow fadeInUp w-r-50 pr-5 clickable cursor-pointer" data-href="<?php echo e(route('show.event', ['id' => $other->id])); ?>">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="view overlay rounded z-depth-1 mb-4">
+                                        <a href="<?php echo e(route('show.event', ['id' => $other->id])); ?>">
+                                            <img class="img-fluid" src="<?php echo e($other->image->url_sm); ?>" alt="<?php echo e($other->title); ?>">
+                                            <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                                        </a>
                                     </div>
                                 </div>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        <?php endif; ?>
-                    </div>
-                </div>
+                                <div class="col-md-9">
+                                    <p class="font-weight-bold dark-grey-text"><?php echo e($other->date->format('d/m/Y')); ?></p>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="col-11 text-truncate pl-0 mb-3">
+                                            <a href="<?php echo e(route('show.event', ['id' => $other->id])); ?>" class="dark-grey-text"><?php echo e($other->title); ?></a>
+                                        </div>
+                                        <a href="<?php echo e(route('show.event', ['id' => $other->id])); ?>"><i class="fa fa-angle-double-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+            </div>
         </section>
     
         <div class="row my-5">

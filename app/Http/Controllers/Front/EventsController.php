@@ -39,7 +39,8 @@ class EventsController extends Controller
 	public function show($id = null)
 	{
 	    $event = Event::findOrFail($id);
+        $albums = $event->getAlbum();
 	    
-		return view('front.events.show', compact('event'));
+		return view('front.events.show', compact('event', 'albums'));
 	}
 }
