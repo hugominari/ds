@@ -9,7 +9,6 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
 use Yajra\DataTables\Facades\DataTables;
@@ -165,12 +164,27 @@ class UsersController extends Controller
 	 */
 	public function myProfile()
 	{
+        $user = Auth::user();
+        $role = $user->getRole();
+        $profilesObj = Role::query()->where('name', '<>', 'root')->get();
+        
+        $profiles = ['' => ''];
+        foreach ($profilesObj as $prof) {
+            $profiles += [$prof->id => $prof->display_name];
+        }
+        
+        $data = [
+            'user',
+            'role',
+            'profiles',
+        ];
+        
 		\JavaScript::put([
-			'roleId' => Auth::user()->getRole()->id,
-			'userId' => Auth::user()->id,
+			'roleId' => $user->getRole()->id,
+			'userId' => $user->id,
 			'showOnly' => true
 		]);
-		return view('admin.users.my-profile');
+		return view('admin.users.profile', compact($data));
 	}
 	
 	/**

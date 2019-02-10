@@ -25,6 +25,7 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
+        $currentUser = Auth::user();
 	    $params = $this->route()->parameters();
 	    $id = isset($params['id']) ? $params['id'] : '';
 	    
@@ -32,9 +33,8 @@ class UserRequest extends FormRequest
 	        $user = User::findOrFail($id);
 	    
 	    $userId = isset($user) ? ",{$user->id}" : null;
+	    $discardPerms = (isset($user->id) && ($currentUser->id == $user->id));
 	    
-	    \Log::debug($userId);
-	
 	    switch($this->method())
 	    {
 		    case 'POST':
@@ -59,7 +59,7 @@ class UserRequest extends FormRequest
 				    'username' => "required|regex:/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/|unique:users,username{$userId}",
 				    // 'password' => 'required|min:8|confirmed',
 				    'profile' => 'required|numeric',
-				    'permissions' => 'required|array',
+				    'permissions' => !$discardPerms ? 'required|array' : 'nullable',
 			    ];
 			    break;
 	    }

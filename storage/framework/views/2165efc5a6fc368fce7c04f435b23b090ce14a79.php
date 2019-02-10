@@ -80,16 +80,6 @@
 							<input name="permissions" type="hidden" id="permissions">
 						</div>
 						<div class="box-body permissions-box" data-source="<?php echo e(route('users.load-permissions')); ?>">
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
 						</div>
 					</div>
 				</div>

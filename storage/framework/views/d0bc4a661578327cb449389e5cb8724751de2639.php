@@ -16,7 +16,7 @@
 
 		</a>
 		<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-			
+			<a id="my-account" class="dropdown-item waves-effect waves-light" href="<?php echo e(route('users.my-profile')); ?>"><i class="fas fa-user-edit pr-1"></i> Meu Perfil</a>
 			<a id="btn-logout" class="dropdown-item waves-effect waves-light" href="javascript:;"><i class="fas fa-power-off pr-2"></i> Fazer Logout</a>
 		</div>
 	</li>

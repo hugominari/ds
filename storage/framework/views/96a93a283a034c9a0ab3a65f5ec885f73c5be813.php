@@ -25,7 +25,7 @@
 						</p>
 					</div>
 					<div class="card-body">
-						<?php echo e(Form::cDropzone('image', $member->image, '', '1', 'Selecione uma imagem.', 'drop-square w-r-100')); ?>
+						<?php echo e(Form::cDropzone('image', $member->image, '', '1', 'Selecione uma imagem.', 'drop-square w-r-100 disabled')); ?>
 
  					</div>
 				</div>
@@ -50,9 +50,13 @@
 						</div>
 						<div class="form-row">
 							<div class="col-md-6">
-								
-								<?php echo e(Form::cDate('birth_date', $member->birth_date, 'Data de Nascimento')); ?>
+								<?php if(!empty($member->birth_date)): ?>
+									<?php echo e(Form::cDate('birth_date', $member->birth_date->format('d/m/Y'), 'Data de Nascimento')); ?>
 
+								<?php else: ?>
+									<?php echo e(Form::cDate('birth_date', null, 'Data de Nascimento')); ?>
+
+								<?php endif; ?>
 							</div>
 							<div class="col-md-6">
 								<?php echo e(Form::cText('cpf', $member->cpf, 'CPF', ['class' => 'form-control cpf'])); ?>

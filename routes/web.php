@@ -197,10 +197,14 @@ Route::group(
                 Route::get('create', 'UsersController@create')->name(
                     'users.create'
                 );
+                Route::get('meu-perfil', 'UsersController@myProfile')->name(
+                    'users.my-profile'
+                );
                 Route::get('{id}', 'UsersController@show')->name('users.show');
                 Route::get('{id}/edit', 'UsersController@edit')->name(
                     'users.edit'
                 );
+               
                 Route::post('store', 'UsersController@store')->name(
                     'users.store'
                 );
@@ -211,9 +215,7 @@ Route::group(
                 );
                 
                 //Customs
-                Route::get('meu-perfil', 'UsersController@myProfile')->name(
-                    'users.my-profile'
-                );
+               
                 Route::post(
                     'resetar-senha', 'UsersController@sendResetPassword'
                 )->name('users.resetPassword');
