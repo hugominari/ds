@@ -244,23 +244,29 @@ class MandatoryController extends Controller
 	{
 		$response = $this->createResult();
 	
-		// try
-		// {
-		// 	$member = Member::findOrFail($id);
-		// 	$member->delete();
-        //
-		// 	// Prepare to response
-		// 	$response->success = true;
-		// 	$response->type = 'success';
-		// 	$response->message = 'Membro deletado com sucesso';
-		// 	$response->title = 'Sucesso';
-		// }
-		// catch(\Error $error)
-		// {
-		// 	$response->message = Controller::DATABASE_ERROR;
-		// 	$response->type = 'error';
-		// 	Log::error($error->getMessage() . " | Linha: {$error->getLine()}");
-		// }
+		try
+		{
+		    $mandatory = Mandatory::find($id);
+		    
+		    //Delete all members of mandatory
+            $membersMandatory = MemberMandatory::query()
+                ->whereMandatoryId($mandatory->id)
+                ->delete();
+            
+            $mandatory->delete();
+        
+			// Prepare to response
+			$response->success = true;
+			$response->type = 'success';
+			$response->message = 'Mandato deletado com sucesso';
+			$response->title = 'Sucesso';
+		}
+		catch(\Error $error)
+		{
+			$response->message = Controller::DATABASE_ERROR;
+			$response->type = 'error';
+			Log::error($error->getMessage() . " | Linha: {$error->getLine()}");
+		}
 	
 		return Response::json($response);
 	}
