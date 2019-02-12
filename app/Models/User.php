@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Http\Controllers\DefaultController;
+use Hash;
 use Laratrust\Traits\LaratrustRoleTrait;
 
 /**
@@ -58,6 +59,16 @@ class User extends \App\Models\Base\User
 	protected $appends = array(
 		'image',
 	);
+    
+    /**
+     * @param $value
+     */
+    public function setPasswordAttribute($value)
+    {
+        $value = (substr($value, 0, 7) == '$2y$10$' && strlen($value) > 50)
+            ? $value : Hash::make($value);
+        $this->attributes['password'] = $value;
+    }
 	
 	/**
 	 * Function to set image append
