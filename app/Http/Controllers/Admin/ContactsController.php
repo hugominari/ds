@@ -100,12 +100,8 @@ class ContactsController extends Controller
             $contact->status = Contact::STATUS_READED;
             $contact->save();
         }
-        
-        $data = [
-            'contact',
-        ];
-        
-        return view("admin.contacts.show", compact($data));
+
+        return view("admin.contacts.show", compact('contact'));
 	}
 	
 	/**
