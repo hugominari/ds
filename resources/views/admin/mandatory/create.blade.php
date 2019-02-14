@@ -95,7 +95,7 @@
 							Listagem
 						</div>
 						<div id="list-director" class="card-body">
-						
+							<ul class="list-unstyled sort-alpha"></ul>
 						</div>
 					</div>
 				</div>
@@ -122,7 +122,7 @@
 							Listagem
 						</div>
 						<div id="list-fiscals" class="card-body">
-						
+							<ul class="list-unstyled sort-alpha"></ul>
 						</div>
 					</div>
 				</div>

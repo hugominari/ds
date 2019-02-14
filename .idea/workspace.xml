@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="528f128c-1cd9-4879-9028-8defb4559c76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/mdb.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mdb.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/mdb.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mdb.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles-backend.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles-backend.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles-frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles-frontend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles-frontend.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles-frontend.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/lib.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/modules.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/modules.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/modules.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/modules.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/basic.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/basic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/basic.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/basic.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/pages/mandatory.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/mandatory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/pages/mandatory.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/mandatory.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/user.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/user.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/scripts-backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scripts-backend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/scripts-backend.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scripts-backend.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/scripts-frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scripts-frontend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/scripts-frontend.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scripts-frontend.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/assets/js/pages/mandatory.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/pages/mandatory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/attendances/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/attendances/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/attendances/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/attendances/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/mandatory/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/mandatory/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/4af7cc1cb14092d6e3b63156ab8f0d6f55e2f228.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/4af7cc1cb14092d6e3b63156ab8f0d6f55e2f228.php" afterDir="false" />
     </list>
@@ -60,8 +38,8 @@
       <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/mandatory/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="99" column="25" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
+            <state relative-caret-position="623">
+              <caret line="97" column="63" selection-start-line="97" selection-start-column="63" selection-end-line="97" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -69,8 +47,8 @@
       <file leaf-file-name="mandatory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/assets/js/pages/mandatory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+            <state relative-caret-position="495">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -494,12 +472,12 @@
       <workItem from="1543791285039" duration="14886000" />
       <workItem from="1543968105282" duration="3814000" />
       <workItem from="1544016234424" duration="3628000" />
-      <workItem from="1549126582769" duration="43276000" />
+      <workItem from="1549126582769" duration="44455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="408917000" />
+    <option name="totallyTimeSpent" value="410096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1805" height="1339" extended-state="0" />
@@ -510,8 +488,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32972974" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993234" visible="true" weight="0.21175523" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26942712" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.4993234" visible="true" weight="0.21175523" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26942712" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32932693" />
@@ -876,15 +854,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/mandatory/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="99" column="25" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
+        <state relative-caret-position="623">
+          <caret line="97" column="63" selection-start-line="97" selection-start-column="63" selection-end-line="97" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/pages/mandatory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+        <state relative-caret-position="495">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>

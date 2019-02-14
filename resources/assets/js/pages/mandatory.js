@@ -12,28 +12,15 @@ try
     var $memberId = $list.find('[data-member]').attr('data-member');
     var $departId = $list.parent().attr('data-position');
     var $id = $memberId + "-" + $departId;
-    
     var isDirector = $list.parents('#box-fiscals').length === 0;
     var $method = isDirector ? '#list-director' : '#list-fiscals';
     var $box = $($method);
     
-    var $p = $('[id^=' + $memberId + '-]');
-    var haveItem = true;
-    
-    if($p.length === 0)
-    {
-      $p = $('</p>');
-      haveItem = false;
-    }
-    
-    var $itemList = $p.attr('id', $id).html("<b>" + $depart + "</b> <br />será ocupado por <b>" + $member + "</b>");
-    
-    if(!haveItem)
-    {
-      $itemList.appendTo($box);
-    }
-    
-    // var List = "<p id='" + $id + "' class=''> <b>" + $depart + "</b> será ocupado por <b>" + $member + "</b> </p>";
+    //Remove
+    $('[id^=' + $memberId + '-]').remove();
+    //Add
+    var $itemList = $('</p>').attr('id', $id).html("<b>" + $depart + "</b> <br />será ocupado por <b>" + $member + "</b>");
+    $itemList.appendTo($box);
     
     if ($list.children().length > 1) {
       $(ui.sender).sortable('cancel');
