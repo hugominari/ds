@@ -93,6 +93,18 @@
 							</div>
 						</div>
 					</div>
+					<div class="card">
+						<div class="card-header">
+							Listagem
+						</div>
+						<div id="list-director" class="card-body">
+							@if (!empty($positionsDirectors))
+								@foreach($positionsDirectors as $positionDirector)
+									<p id="{{ $directors[$positionDirector->id]['id'] }}-{{ $positionDirector->id }}"><b> {{ $positionDirector->name }} </b> <br />é ocupado por <b> {{ $directors[$positionDirector->id]['name'] }} </b></p>
+								@endforeach
+							@endif
+						</div>
+					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="card">
@@ -114,6 +126,18 @@
 									@endforeach
 								@endif
 							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							Listagem
+						</div>
+						<div id="list-fiscals" class="card-body">
+							@if (!empty($positionsFiscals))
+								@foreach($positionsFiscals as $positionFiscal)
+									<p id="{{ $fiscals[$positionFiscal->id]['id'] }}-{{ $positionFiscal->id }}"><b> {{ $positionFiscal->name }} </b> <br />é ocupado por <b> {{ $fiscals[$positionFiscal->id]['name'] }} </b></p>
+								@endforeach
+							@endif
 						</div>
 					</div>
 				</div>

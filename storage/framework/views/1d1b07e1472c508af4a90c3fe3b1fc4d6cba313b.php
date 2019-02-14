@@ -76,6 +76,18 @@
 							</div>
 						</div>
 					</div>
+					<div class="card">
+						<div class="card-header">
+							Listagem
+						</div>
+						<div id="list-director" class="card-body">
+							<?php if(!empty($positionsDirectors)): ?>
+								<?php $__currentLoopData = $positionsDirectors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $positionDirector): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+									<p id="<?php echo e($directors[$positionDirector->id]['id']); ?> - <?php echo e($positionDirector->id); ?>"><b> <?php echo e($positionDirector->name); ?> </b> <br />é ocupado por <b> <?php echo e($directors[$positionDirector->id]['name']); ?> </b></p>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+							<?php endif; ?>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="card">
@@ -97,6 +109,18 @@
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								<?php endif; ?>
 							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							Listagem
+						</div>
+						<div id="list-fiscals" class="card-body">
+							<?php if(!empty($positionsFiscals)): ?>
+								<?php $__currentLoopData = $positionsFiscals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $positionFiscal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+									<p id="<?php echo e($fiscals[$positionFiscal->id]['id']); ?> - <?php echo e($positionFiscal->id); ?>"><b> <?php echo e($positionFiscal->name); ?> </b> <br />é ocupado por <b> <?php echo e($fiscals[$positionFiscal->id]['name']); ?> </b></p>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
