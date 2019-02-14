@@ -1,1 +1,302 @@
-@font-face{font-family:"droid_serifitalic";src:url("../font/DroidSerif-Italic.eot");src:url("../font/DroidSerif-Italic.eot?#iefix") format("embedded-opentype"),url("../font/DroidSerif-Italic.woff2") format("woff2"),url("../font/DroidSerif-Italic.woff") format("woff"),url("../font/DroidSerif-Italic.ttf") format("truetype"),url("../font/DroidSerif-Italic.svg#droid_serifitalic") format("svg");font-weight:400;font-style:normal}@font-face{font-family:gibsonlight;src:url("../font/Gibson-Light.eot");src:url("../font/Gibson-Light.eot?#iefix") format("embedded-opentype"),url("../font/Gibson-Light.woff2") format("woff2"),url("../font/Gibson-Light.woff") format("woff"),url("../font/Gibson-Light.ttf") format("truetype"),url("../font/Gibson-Light.svg#gibsonlight") format("svg");font-weight:400;font-style:normal}@font-face{font-family:gibsonsemibold;src:url("../font/Gibson-SemiBold.eot");src:url("../font/Gibson-SemiBold.eot?#iefix") format("embedded-opentype"),url("../font/Gibson-SemiBold.woff2") format("woff2"),url("../font/Gibson-SemiBold.woff") format("woff"),url("../font/Gibson-SemiBold.ttf") format("truetype"),url("../font/Gibson-SemiBold.svg#gibsonsemibold") format("svg");font-weight:400;font-style:normal}@font-face{font-family:gibsonregular;src:url("../font/Gibson.eot");src:url("../font/Gibson.eot?#iefix") format("embedded-opentype"),url("../font/Gibson.woff2") format("woff2"),url("../font/Gibson.woff") format("woff"),url("../font/Gibson.ttf") format("truetype"),url("../font/Gibson.svg#gibsonregular") format("svg");font-weight:400;font-style:normal}main{min-height:78.4vh}.page-footer{background-color:#e0e0e0}.gibson-bold{font-family:gibsonsemibold;letter-spacing:1.5px;font-weight:400}.gibson{font-family:gibsonregular;font-weight:400}.dropdown:hover>.dropdown-menu{display:block}.dropdown>.dropdown-toggle:active{pointer-events:none}.arrow{position:absolute;top:90vh;left:50%;z-index:2;display:inline-block;-webkit-transform:translateY(-50%);transform:translateY(-50%);text-decoration:none}.bounce{-webkit-animation:bounce 2s infinite;animation:bounce 2s infinite}@-webkit-keyframes bounce{0%,20%,50%,80%,to{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-30px);transform:translateY(-30px)}60%{-webkit-transform:translateY(-15px);transform:translateY(-15px)}}@keyframes bounce{0%,20%,50%,80%,to{-webkit-transform:translateY(0);transform:translateY(0)}40%{-webkit-transform:translateY(-30px);transform:translateY(-30px)}60%{-webkit-transform:translateY(-15px);transform:translateY(-15px)}}.bg-yellow-dark{background-color:#fdb913!important}.color-yellow{color:#fd0!important}.bg-yellow{background-color:#fd0!important}.color-yellow-light{color:#fff32a!important}.bg-yellow-light{background-color:#fff32a!important}.color-yellow-dark{color:#fdb913!important}.color-blue-dark{color:#020f50!important}.bg-blue-dark{background-color:#020f50!important}.color-blue{color:#1e398d!important}.bg-blue{background-color:#1e398d!important}.color-blue-light{color:#034ea2!important}.bg-blue-light{background-color:#034ea2!important}.color-blue-extra-light{color:#00aeef!important}.bg-blue-extra-light{background-color:#00aeef!important}.color-green-dark{color:#00793f!important}.bg-green-dark{background-color:#00793f!important}.color-green{color:#2da44a!important}.bg-green{background-color:#2da44a!important}.color-green-light{color:#72bf44!important}.bg-green-light{background-color:#72bf44!important}.color-gray-dark{color:#ccc!important}.bg-gray-dark{background-color:#ccc!important}.color-gray{color:#b3b2b2!important}.bg-gray{background-color:#b3b2b2!important}.color-gray-light{color:#666!important}.bg-gray-light{background-color:#666!important}#section-events{padding:30px 20px;background:url("http://photosmilephotos.com/wp-content/uploads/2015/04/Corporate-Events-Cancun-597-background-30-opacity1.jpg") no-repeat bottom fixed;background-size:cover;-o-background-size:cover}#section-internal-rules{padding:80px 20px;background:url("https://juristas.com.br/wp-content/uploads/2018/06/judge-gavel-and-law-book-on-a-black-wooden-background-law-library-picture-id947152444.jpg") no-repeat bottom fixed;background-size:cover;-o-background-size:cover}#section-map{padding:0;margin:0}.custom-avatar{width:200px;height:200px;-webkit-border-radius:200px;-webkit-background-clip:padding-box;-moz-border-radius:200px;-moz-background-clip:padding;border-radius:200px;background-clip:padding-box;background-size:cover;background-position:50%}.accordion.md-accordion.accordion-5 .card .card-header{background-color:#b3b2b2;-webkit-transition:.3s;transition:.3s}@media (max-width:860px){.arrow{top:80vh}}@media (min-width:992px){.img-mobile{display:block}.img-desktop{display:none}}@media (max-width:992px){.img-mobile{display:none}.img-desktop{display:block}}#map-container{width:100%}.campaigns>.swiper-slide{text-align:center;font-size:18px;background:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.swiper-container{width:100%;height:100%}
+@font-face {
+  font-family: 'droid_serifitalic';
+  src: url("../font/DroidSerif-Italic.eot");
+  src: url("../font/DroidSerif-Italic.eot?#iefix") format("embedded-opentype"), url("../font/DroidSerif-Italic.woff2") format("woff2"), url("../font/DroidSerif-Italic.woff") format("woff"), url("../font/DroidSerif-Italic.ttf") format("truetype"), url("../font/DroidSerif-Italic.svg#droid_serifitalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gibsonlight';
+  src: url("../font/Gibson-Light.eot");
+  src: url("../font/Gibson-Light.eot?#iefix") format("embedded-opentype"), url("../font/Gibson-Light.woff2") format("woff2"), url("../font/Gibson-Light.woff") format("woff"), url("../font/Gibson-Light.ttf") format("truetype"), url("../font/Gibson-Light.svg#gibsonlight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gibsonsemibold';
+  src: url("../font/Gibson-SemiBold.eot");
+  src: url("../font/Gibson-SemiBold.eot?#iefix") format("embedded-opentype"), url("../font/Gibson-SemiBold.woff2") format("woff2"), url("../font/Gibson-SemiBold.woff") format("woff"), url("../font/Gibson-SemiBold.ttf") format("truetype"), url("../font/Gibson-SemiBold.svg#gibsonsemibold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gibsonregular';
+  src: url("../font/Gibson.eot");
+  src: url("../font/Gibson.eot?#iefix") format("embedded-opentype"), url("../font/Gibson.woff2") format("woff2"), url("../font/Gibson.woff") format("woff"), url("../font/Gibson.ttf") format("truetype"), url("../font/Gibson.svg#gibsonregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+main {
+  min-height: 78.4vh;
+}
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #e0e0e0;
+}
+
+.gibson-bold {
+  font-family: gibsonsemibold;
+  letter-spacing: 1.5px;
+  font-weight: normal;
+}
+
+.gibson {
+  font-family: gibsonregular;
+  font-weight: normal;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 90vh;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  text-decoration: none;
+}
+
+.bounce {
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+}
+
+.color-yellow-dark {
+  color: #FDB913 !important;
+}
+
+.bg-yellow-dark {
+  background-color: #FDB913 !important;
+}
+
+.color-yellow {
+  color: #FFDD00 !important;
+}
+
+.bg-yellow {
+  background-color: #FFDD00 !important;
+}
+
+.color-yellow-light {
+  color: #FFF32A !important;
+}
+
+.bg-yellow-light {
+  background-color: #FFF32A !important;
+}
+
+.color-yellow-dark {
+  color: #FDB913 !important;
+}
+
+.color-blue-dark {
+  color: #020f50 !important;
+}
+
+.bg-blue-dark {
+  background-color: #020f50 !important;
+}
+
+.color-blue {
+  color: #1E398D !important;
+}
+
+.bg-blue {
+  background-color: #1E398D !important;
+}
+
+.color-blue-light {
+  color: #034EA2 !important;
+}
+
+.bg-blue-light {
+  background-color: #034EA2 !important;
+}
+
+.color-blue-extra-light {
+  color: #00AEEF !important;
+}
+
+.bg-blue-extra-light {
+  background-color: #00AEEF !important;
+}
+
+.color-green-dark {
+  color: #00793F !important;
+}
+
+.bg-green-dark {
+  background-color: #00793F !important;
+}
+
+.color-green {
+  color: #2DA44A !important;
+}
+
+.bg-green {
+  background-color: #2DA44A !important;
+}
+
+.color-green-light {
+  color: #72BF44 !important;
+}
+
+.bg-green-light {
+  background-color: #72BF44 !important;
+}
+
+.color-gray-dark {
+  color: #cccccc !important;
+}
+
+.bg-gray-dark {
+  background-color: #cccccc !important;
+}
+
+.color-gray {
+  color: #b3b2b2 !important;
+}
+
+.bg-gray {
+  background-color: #b3b2b2 !important;
+}
+
+.color-gray-light {
+  color: #666666 !important;
+}
+
+.bg-gray-light {
+  background-color: #666666 !important;
+}
+
+#section-events {
+  padding: 30px 20px;
+  background: url("http://photosmilephotos.com/wp-content/uploads/2015/04/Corporate-Events-Cancun-597-background-30-opacity1.jpg") no-repeat center bottom fixed;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#section-internal-rules {
+  padding: 80px 20px;
+  background: url("https://juristas.com.br/wp-content/uploads/2018/06/judge-gavel-and-law-book-on-a-black-wooden-background-law-library-picture-id947152444.jpg") no-repeat center bottom fixed;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#section-map {
+  padding: 0;
+  margin: 0;
+}
+
+.custom-avatar {
+  width: 200px;
+  height: 200px;
+  -webkit-border-radius: 200px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 200px;
+  -moz-background-clip: padding;
+  border-radius: 200px;
+  background-clip: padding-box;
+  background-size: cover;
+  background-position: center center;
+}
+
+.accordion.md-accordion.accordion-5 .card .card-header {
+  background-color: #b3b2b2;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+@media (max-width: 860px) {
+  .arrow {
+    top: 80vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .img-mobile {
+    display: block;
+  }
+  .img-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .img-mobile {
+    display: none;
+  }
+  .img-desktop {
+    display: block;
+  }
+}
+
+#map-container {
+  width: 100%;
+}
+
+.campaigns > .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Required for full background image */

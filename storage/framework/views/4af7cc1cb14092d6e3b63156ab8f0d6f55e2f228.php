@@ -27,99 +27,118 @@
 	<?php echo Form::open(['route' => 'mandatory.store', 'method' => 'POST', 'class' => 'ajax-form']); ?>
 
 	
-		<div class="row">
-			<div class="col-md-12">
-				
-				<div class="card">
-					<div class="card-header">
-						Configurações
+	<div class="row">
+		<div class="col-md-12">
+			
+			<div class="card">
+				<div class="card-header">
+					Configurações
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-4">
+							<?php echo e(Form::cText('name', '', 'Identificação')); ?>
+
+						</div>
+						<div class="col-md-4">
+							<?php echo e(Form::cDate('date_start', '', 'Data de início')); ?>
+
+						</div>
+						<div class="col-md-4">
+							<?php echo e(Form::cDate('date_end', '', 'Data de término')); ?>
+
+						</div>
 					</div>
-					<div class="card-body">
-						<div class="row">
-							<div class="col-md-4">
-								<?php echo e(Form::cText('name', '', 'Identificação')); ?>
+					<div class="row hide">
+						<div class="col-md-12">
+							<?php echo e(Form::cText('directors', '', '', ['class' => 'hide'])); ?>
 
-							</div>
-							<div class="col-md-4">
-								<?php echo e(Form::cDate('date_start', '', 'Data de início')); ?>
+							<?php echo e(Form::cText('fiscals', '', '', ['class' => 'hide'])); ?>
 
-							</div>
-							<div class="col-md-4">
-								<?php echo e(Form::cDate('date_end', '', 'Data de término')); ?>
-
-							</div>
 						</div>
-						<div class="row hide">
-						    <div class="col-md-12">
-						        <?php echo e(Form::cText('directors', '', '', ['class' => 'hide'])); ?>
-
-						        <?php echo e(Form::cText('fiscals', '', '', ['class' => 'hide'])); ?>
-
-						    </div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<h4>Membros <span class="text-info font-14 d-block">Arraste a imagem do membro para os cargos abaixo:</span>
+							</h4>
 						</div>
-						<div class="row">
-						    <div class="col-md-12">
-								<h4>Membros <span class="text-info font-14 d-block">Arraste a imagem do membro para os cargos abaixo:</span></h4>
-						    </div>
+					</div>
+					<div class="row">
+						<div id="box-members" class="col-md-12 connectedSortable" style="min-height: 30px">
+							<?php if(!empty($members)): ?>
+								<?php $__currentLoopData = $members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+									<img class="img-fluid width-72 heigth-72 float-left mx-2 my-2 z-depth-1"
+										 src="<?php echo e($member->image->url_sm); ?>" alt="<?php echo e($member->name); ?>"
+										 data-member="<?php echo e($member->id); ?>" data-container="body" data-toggle="popover"
+										 data-placement="top" data-content="<?php echo e($member->name); ?>">
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+							<?php endif; ?>
 						</div>
-						<div class="row">
-							<div id="box-members" class="col-md-12 connectedSortable" style="min-height: 30px">
-								<?php if(!empty($members)): ?>
-									<?php $__currentLoopData = $members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-										<img class="img-fluid width-72 heigth-72 float-left mx-2 my-2 z-depth-1"
-											 src="<?php echo e($member->image->url_sm); ?>" alt="<?php echo e($member->name); ?>"
-											 data-member="<?php echo e($member->id); ?>">
+					</div>
+				</div>
+			</div>
+			
+			<div id="box-positions" class="row pt-3">
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header">
+							Diretoria
+						</div>
+						<div class="card-body">
+							<div id="box-directors" class="row">
+								<?php if(!empty($positionsDirectors)): ?>
+									<?php $__currentLoopData = $positionsDirectors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $positionDirector): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<div class="col-md-4" data-position="<?php echo e($positionDirector->id); ?>">
+											<p><?php echo e($positionDirector->name); ?></p>
+											<div class="connectedSortable w-r-100 h-r-100"></div>
+										</div>
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								<?php endif; ?>
 							</div>
 						</div>
 					</div>
+					<div class="card">
+						<div class="card-header">
+							Listagem
+						</div>
+						<div id="list-director" class="card-body">
+						
+						</div>
+					</div>
 				</div>
-				
-				<div id="box-positions" class="row pt-3">
-					<div class="col-md-6">
-						<div class="card">
-							<div class="card-header">
-								Diretoria
-							</div>
-							<div class="card-body">
-								<div id="box-directors" class="row">
-									<?php if(!empty($positionsDirectors)): ?>
-										<?php $__currentLoopData = $positionsDirectors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $positionDirector): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-											<div class="col-md-4" data-position="<?php echo e($positionDirector->id); ?>">
-												<p><?php echo e($positionDirector->name); ?></p>
-												<div class="connectedSortable w-r-100 h-r-100"></div>
-											</div>
-										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-									<?php endif; ?>
-								</div>
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header">
+							Conselho Fiscal
+						</div>
+						<div class="card-body">
+							<div id="box-fiscals" class="row">
+								<?php if(!empty($positionsFiscals)): ?>
+									<?php $__currentLoopData = $positionsFiscals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $positionFiscal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+										<div class="col-md-4" data-position="<?php echo e($positionFiscal->id); ?>">
+											<p><?php echo e($positionFiscal->name); ?></p>
+											<div class="connectedSortable w-r-100 h-r-100"></div>
+										</div>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
-						<div class="card">
-							<div class="card-header">
-								Conselho Fiscal
-							</div>
-							<div class="card-body">
-								<div id="box-fiscals" class="row">
-									<?php if(!empty($positionsFiscals)): ?>
-										<?php $__currentLoopData = $positionsFiscals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $positionFiscal): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-											<div class="col-md-4" data-position="<?php echo e($positionFiscal->id); ?>">
-												<p><?php echo e($positionFiscal->name); ?></p>
-												<div class="connectedSortable w-r-100 h-r-100"></div>
-											</div>
-										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-									<?php endif; ?>
-								</div>
-							</div>
+					<div class="card">
+						<div class="card-header">
+							Listagem
+						</div>
+						<div id="list-fiscals" class="card-body">
+						
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		
-		<?php $__env->startComponent('components.fixed-actions'); ?><?php echo $__env->renderComponent(); ?>
+		</div>
+	</div>
+	
+	<?php $__env->startComponent('components.fixed-actions'); ?><?php echo $__env->renderComponent(); ?>
 	
 	<?php echo Form::close(); ?>
 

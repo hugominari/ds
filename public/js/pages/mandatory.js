@@ -1,1 +1,106 @@
-try{$("#box-members, #box-positions .connectedSortable").sortable({connectWith:".connectedSortable",opacity:.5}).disableSelection(),$("#box-positions .connectedSortable").on("sortreceive",function(e,t){$(this).children().length>1&&$(t.sender).sortable("cancel")})}catch(e){console.log("asd")}Callbacks.preSubmit=function(){var e=$("#box-directors > div"),t=$("#box-fiscals > div"),i=[],o=[],r=e.length,a=t.length,n=0,s=0;$.each(e,function(){$member=$(this).find("img").attr("data-member"),$member&&(i.push({position_id:$(this).attr("data-position"),member_id:$member}),n++)}),$.each(t,function(){$member=$(this).find("img").attr("data-member"),$member&&(o.push({position_id:$(this).attr("data-position"),member_id:$member}),s++)});var c=r>n,m=a>s;if(c||m){var b="Você precisa montar o conselho fiscal!";return c&&(b="Você precisa montar a diretoria!"),generateNotify("Opss",b,"error"),!1}return $("#directors").val(JSON.stringify(i)),$("#fiscals").val(JSON.stringify(o)),!0};
+try {
+  $('#box-members, #box-positions .connectedSortable').sortable({
+    connectWith: '.connectedSortable',
+    opacity: 0.5
+  }).disableSelection();
+
+  $("#box-positions .connectedSortable").on("sortreceive", function (event, ui) {
+    var $list = $(this);
+    var $member = $list.find('[data-member]').attr('alt');
+    var $depart = $list.parent().find('p').text();
+    var $memberId = $list.find('[data-member]').attr('data-member');
+    var $departId = $list.parent().attr('data-position');
+    var $id = $memberId + "-" + $departId;
+
+    var isDirector = $list.parents('#box-fiscals').length === 0;
+    var $method = isDirector ? '#list-director' : '#list-fiscals';
+    var $box = $($method);
+
+    var $p = $('[id^=' + $memberId + '-]');
+    var haveItem = true;
+
+    if ($p.length === 0) {
+      $p = $('</p>');
+      haveItem = false;
+    }
+
+    var $itemList = $p.attr('id', $id).html("<b>" + $depart + "</b> <br />será ocupado por <b>" + $member + "</b>");
+
+    if (!haveItem) {
+      $itemList.appendTo($box);
+    }
+
+    // var List = "<p id='" + $id + "' class=''> <b>" + $depart + "</b> será ocupado por <b>" + $member + "</b> </p>";
+
+    if ($list.children().length > 1) {
+      $(ui.sender).sortable('cancel');
+    }
+  });
+} catch (e) {
+  console.log('asd');
+}
+
+$('[data-toggle="tooltip"]').tooltip();
+$('[data-toggle="popover"]').popover({
+  trigger: 'hover'
+});
+
+/**
+ *
+ */
+Callbacks.preSubmit = function () {
+  var $directors = $('#box-directors > div');
+  var $fiscals = $('#box-fiscals > div');
+  var Director = [];
+  var Fiscal = [];
+
+  var $qtdDirectors = $directors.length;
+  var $qtdFiscals = $fiscals.length;
+  var $ctrDirectors = 0;
+  var $ctrFiscals = 0;
+
+  // Directors
+  $.each($directors, function () {
+    $member = $(this).find('img').attr('data-member');
+
+    if (!!$member) {
+      Director.push({
+        position_id: $(this).attr('data-position'),
+        member_id: $member
+      });
+
+      $ctrDirectors++;
+    }
+  });
+
+  // Fiscal
+  $.each($fiscals, function () {
+    $member = $(this).find('img').attr('data-member');
+
+    if (!!$member) {
+      Fiscal.push({
+        position_id: $(this).attr('data-position'),
+        member_id: $member
+      });
+
+      $ctrFiscals++;
+    }
+  });
+
+  var $hasDirectors = $qtdDirectors > $ctrDirectors;
+  var $hasFicals = $qtdFiscals > $ctrFiscals;
+
+  if ($hasDirectors || $hasFicals) {
+    var $message = 'Você precisa montar o conselho fiscal!';
+
+    if ($hasDirectors) $message = 'Você precisa montar a diretoria!';
+
+    generateNotify('Opss', $message, 'error');
+    return false;
+  }
+
+  $('#directors').val(JSON.stringify(Director));
+  $('#fiscals').val(JSON.stringify(Fiscal));
+
+  return true;
+};

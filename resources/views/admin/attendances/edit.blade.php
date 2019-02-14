@@ -4,7 +4,7 @@
 	<section class="content-header">
 		<div class="row m-b-10">
 			<div class="col-md-8">
-				<h1><i class="far fa-comment"></i> Edição de atendimento</h1>
+				<h1><i class="fas fa-headset"></i> Edição de atendimento</h1>
 			</div>
 			<div class="col-md-4">
 				<a href="{{ route('attendance.index') }}" class="display-inline-block pull-right m-t-11">
