@@ -2,8 +2,91 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="528f128c-1cd9-4879-9028-8defb4559c76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/_bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/addons-pro/stepper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/addons-pro/stepper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/addons-pro/steppers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/addons-pro/steppers.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/addons-pro/timeline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/addons/datatables-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/addons/datatables-select.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/addons/datatables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/addons/datatables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/mdb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/mdb.lite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/mdb.lite.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/mdb.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/buttons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/cards.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/character-counter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/chips.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/collapsible.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/default-file-input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/dropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/file-input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/forms-free.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/material-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/mdb-autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/preloading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/range-input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/scrolling-navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/sidenav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/smooth-scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/modules/sticky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/sass/addons/_directives.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/attendances/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AttendanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AttendanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Call.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Call.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/mdb.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mdb.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/mdb.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mdb.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles-backend.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles-backend.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles-frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles-frontend.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles-frontend.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles-frontend.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/lib.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/modules.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/modules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/modules.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/modules.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pages/basic.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/basic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pages/basic.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/basic.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pages/mandatory.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/mandatory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pages/mandatory.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/mandatory.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pages/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pages/user.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/user.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/scripts-backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scripts-backend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/scripts-backend.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scripts-backend.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/scripts-frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scripts-frontend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/scripts-frontend.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scripts-frontend.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/js/backend/scripts-backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/backend/scripts-backend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/core/_helpers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/core/_helpers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/free/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/free/_cards.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/free/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/free/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/mdb.lite.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/mdb.lite.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/mdb.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/mdb.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/pro/_carousels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/pro/_carousels.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/pro/_sidenav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/pro/_sidenav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/pro/_tooltips.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/pro/_tooltips.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/pro/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/pro/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/attendances/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/attendances/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/CnwfaQ3yWc5SiKBNZiUcsBTEGcBqCZWWFVCcPa6v" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/d1nTEkWJS2RQSyUSU6QjnEGXkTScquwztXI0Rx94" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/997c9801063b62fcb12325a090c0a32379d6777b.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/997c9801063b62fcb12325a090c0a32379d6777b.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/c1ad8a1ac03b43bd5485e57dcbfd7cc4eb492564.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/c1ad8a1ac03b43bd5485e57dcbfd7cc4eb492564.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-02-03.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-02-09.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-02-10.log" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,11 +118,65 @@
       <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
-              <caret line="284" column="27" lean-forward="true" selection-start-line="284" selection-start-column="27" selection-end-line="284" selection-end-column="27" />
+            <state relative-caret-position="446">
+              <caret line="372" column="34" selection-start-line="372" selection-start-column="34" selection-end-line="372" selection-end-column="34" />
               <folding>
                 <element signature="e#46#82#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="538">
+              <caret line="214" column="18" lean-forward="true" selection-start-line="214" selection-start-column="18" selection-end-line="214" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scripts-backend.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/backend/scripts-backend.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/users/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="467">
+              <caret line="76" column="12" lean-forward="true" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/default.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/attendances/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -69,16 +206,16 @@
       <find>members</find>
       <find>\[2018\-11\-25 22\:50\:29\] local\.DEBUG\: get \{\&quot;\$haveExtension\&quot;\:false\,\&quot;\$filename\&quot;\:\&quot;image\.jpg\&quot;\,\&quot;\$path\&quot;\:\&quot;public\/covenants\/2\/image\.jpg\&quot;\} \n</find>
       <find>connectedSortable</find>
-      <find>readOnly</find>
       <find>showO</find>
+      <find>readOnly</find>
     </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
-      <dir>$PROJECT_DIR$/resources/assets/js</dir>
       <dir>$PROJECT_DIR$/resources/assets</dir>
+      <dir>$PROJECT_DIR$/resources/assets/js</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -87,14 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/layouts/frontend/default.blade.php" />
-        <option value="$PROJECT_DIR$/resources/assets/sass/_custom-styles.scss" />
-        <option value="$PROJECT_DIR$/resources/views/front/posts/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/Feed.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/posts/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/assets/js/frontend/scripts-frontend.js" />
-        <option value="$PROJECT_DIR$/resources/assets/js/libs/cep.js" />
         <option value="$PROJECT_DIR$/resources/assets/js/modules/select2.js" />
         <option value="$PROJECT_DIR$/app/Http/ViewComposers/GlobalComposer.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/pages/user.js" />
@@ -108,7 +237,6 @@
         <option value="$PROJECT_DIR$/public/plugins/datatables/DataTables-1.10.18/css/jquery.dataTables.css" />
         <option value="$PROJECT_DIR$/resources/assets/sass/mdb.scss" />
         <option value="$PROJECT_DIR$/resources/views/admin/events/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/admin/elements/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/pages/mandatory.js" />
         <option value="$PROJECT_DIR$/app/Models/Base/Position.php" />
         <option value="$PROJECT_DIR$/app/Models/Base/Mandatory.php" />
@@ -118,7 +246,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/mandatory/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/MandatoryRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/mandatory/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/assets/js/backend/scripts-backend.js" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/views/admin/members/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/members/show.blade.php" />
@@ -130,14 +257,24 @@
         <option value="$PROJECT_DIR$/resources/views/front/contact.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/resources/views/layouts/admin/elements/navbar.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/profile.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/UserRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/MandatoryController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ContactsController.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/admin/elements/sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/attendances/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Call.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AttendanceController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/attendances/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/assets/js/bootstrap.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/admin/default.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/assets/js/backend/scripts-backend.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
       </list>
     </option>
   </component>
@@ -263,7 +400,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="2560" />
+    <option name="width" value="1805" />
     <option name="height" value="1339" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -317,7 +454,8 @@
               <item name="sindireceita" type="b2602c69:ProjectViewProjectNode" />
               <item name="sindireceita" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="ViewComposers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sindireceita" type="b2602c69:ProjectViewProjectNode" />
@@ -342,16 +480,7 @@
               <item name="sindireceita" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sindireceita" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sindireceita" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sindireceita" type="b2602c69:ProjectViewProjectNode" />
@@ -372,14 +501,7 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="attendances" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sindireceita" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sindireceita" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sindireceita" type="b2602c69:ProjectViewProjectNode" />
@@ -399,27 +521,13 @@
             <path>
               <item name="sindireceita" type="b2602c69:ProjectViewProjectNode" />
               <item name="sindireceita" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="elements" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sindireceita" type="b2602c69:ProjectViewProjectNode" />
               <item name="sindireceita" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sindireceita" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sindireceita" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="modal" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -429,7 +537,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="User&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Http/Controllers/Admin/UsersController.php&#10;web&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/routes/web.php&#10;we&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/routes/web.php&#10;Member&#9;null&#9;null&#10;We&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/routes/web.php&#10;Gene&#9;null&#9;null&#10;form&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/assets/js/modules/form_actions.js&#10;Feed&#9;null&#9;null&#10;side&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/elements/sidebar.blade.php&#10;Mem&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Member.php&#10;mask&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/assets/js/modules/mask.js&#10;FOrm&#9;null&#9;null&#10;Posi&#9;null&#9;null&#10;Glob&#9;null&#9;null&#10;Post&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Post.php&#10;event&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Event.php&#10;Fee&#9;null&#9;null&#10;Globa&#9;null&#9;null&#10;sideb&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/elements/sidebar.blade.php&#10;Form&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Providers/FormServiceProvider.php&#10;sideba&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/elements/sidebar.blade.php&#10;Even&#9;null&#9;null&#10;Cove&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Covenant.php&#10;Control&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Http/Controllers/Controller.php&#10;Eve&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Http/Controllers/Admin/EventsController.php&#10;Event&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Event.php&#10;Pos&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Position.php&#10;Webs&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Website.php&#10;basic&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/assets/js/pages/basic.js&#10;sideB&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/elements/sidebar.blade.php&#10;defa&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/default.blade.php&#10;defau&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/default.blade.php&#10;navb&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/elements/navbar.blade.php&#10;Socia&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Http/Requests/SocialRequest.php&#10;data&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/assets/js/modules/datatables.js&#10;inde&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/admin/users/index.blade.php&#10;defaul&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/default.blade.php&#10;default&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/default.blade.php&#10;Files&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Http/Traits/FilesTrait.php" />
+    <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/routes/web.php&#10;Call&#9;null&#9;null&#10;Ge&#9;null&#9;null&#10;User&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Http/Controllers/Admin/UsersController.php&#10;we&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/routes/web.php&#10;Member&#9;null&#9;null&#10;We&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/routes/web.php&#10;Gene&#9;null&#9;null&#10;form&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/assets/js/modules/form_actions.js&#10;Feed&#9;null&#9;null&#10;side&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/elements/sidebar.blade.php&#10;Mem&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Member.php&#10;mask&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/assets/js/modules/mask.js&#10;FOrm&#9;null&#9;null&#10;Posi&#9;null&#9;null&#10;Glob&#9;null&#9;null&#10;Post&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Post.php&#10;event&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Event.php&#10;Fee&#9;null&#9;null&#10;Globa&#9;null&#9;null&#10;sideb&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/elements/sidebar.blade.php&#10;Form&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Providers/FormServiceProvider.php&#10;sideba&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/elements/sidebar.blade.php&#10;Even&#9;null&#9;null&#10;Cove&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Covenant.php&#10;Control&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Http/Controllers/Controller.php&#10;Eve&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Http/Controllers/Admin/EventsController.php&#10;Event&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Event.php&#10;Pos&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Position.php&#10;Webs&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Models/Website.php&#10;basic&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/assets/js/pages/basic.js&#10;sideB&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/elements/sidebar.blade.php&#10;defa&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/default.blade.php&#10;defau&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/default.blade.php&#10;navb&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/elements/navbar.blade.php&#10;Socia&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Http/Requests/SocialRequest.php&#10;data&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/assets/js/modules/datatables.js&#10;inde&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/admin/users/index.blade.php&#10;defaul&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/default.blade.php&#10;default&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/resources/views/layouts/admin/default.blade.php&#10;Files&#9;FILE&#9;file:///Applications/MAMP/htdocs/sindireceita/app/Http/Traits/FilesTrait.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -439,18 +547,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/assets/js" />
+      <recent name="$PROJECT_DIR$/resources/assets/sass" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/attendances" />
       <recent name="$PROJECT_DIR$/resources/views/admin/users" />
       <recent name="$PROJECT_DIR$/public/plugins/mdb" />
-      <recent name="$PROJECT_DIR$/resources/assets/sass" />
-      <recent name="$PROJECT_DIR$/resources/views/admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Requests" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/assets/js" />
       <recent name="$PROJECT_DIR$/resources/views/layouts/admin/elements" />
       <recent name="$PROJECT_DIR$/resources/views/layouts/modal" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/storage/app/public/members/0" />
-      <recent name="$PROJECT_DIR$/public/plugins/dropzone" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -508,15 +616,15 @@
       <workItem from="1543791285039" duration="14886000" />
       <workItem from="1543968105282" duration="3814000" />
       <workItem from="1544016234424" duration="3628000" />
-      <workItem from="1549126582769" duration="32733000" />
+      <workItem from="1549126582769" duration="38975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398374000" />
+    <option name="totallyTimeSpent" value="404616000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1339" extended-state="0" />
+    <frame x="0" y="23" width="1805" height="1339" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -524,8 +632,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32972974" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993234" visible="true" weight="0.31723028" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18864179" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4993234" visible="true" weight="0.21175523" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26942712" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32932693" />
@@ -552,155 +660,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/mandatory/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/mandatory/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="58" column="106" selection-start-line="58" selection-start-column="106" selection-end-line="58" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Mandatory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding>
-            <element signature="e#30#48#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/MandatoryRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
-          <folding>
-            <element signature="e#37#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Base/Mandatory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/modules/form_actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1095" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/lib.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="127" column="8" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/mandatory/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="23" column="14" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/mandatory/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/backend/scripts-backend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="66" column="7" lean-forward="true" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-656" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2535">
-          <caret line="261" column="23" lean-forward="true" selection-start-line="261" selection-start-column="23" selection-end-line="261" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-03.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-5628">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/members/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/members/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="53" column="38" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="53" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/events/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="40" column="22" selection-start-line="31" selection-start-column="16" selection-end-line="40" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/contact.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/events/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="73" column="56" selection-start-line="73" selection-start-column="56" selection-end-line="73" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/modules/notify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/EventsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -715,23 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="71" column="43" lean-forward="true" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/default.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="24" column="51" lean-forward="true" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-10.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
@@ -739,38 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="110" selection-start-line="17" selection-start-column="110" selection-end-line="17" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="201" column="18" selection-start-line="201" selection-start-column="18" selection-end-line="201" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/ViewComposers/GlobalComposer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="68" column="30" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -804,13 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-381">
-          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Base/Contact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
@@ -839,20 +742,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/attendances/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ContactsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="568">
           <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/elements/create-attendance.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -871,24 +764,238 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-309" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1106">
+          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+        <state relative-caret-position="696">
+          <caret line="82" column="1" lean-forward="true" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+          <folding>
+            <element signature="e#23#32#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/GenerateMenus.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/attendances/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-689">
+          <caret line="261" column="23" lean-forward="true" selection-start-line="261" selection-start-column="23" selection-end-line="261" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/ViewComposers/GlobalComposer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Constants.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="38" column="45" lean-forward="true" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/elements/create-attendance.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="41" selection-start-column="41" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/elements/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="126" column="17" lean-forward="true" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/TypeCall.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-11.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Member.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="62" column="77" lean-forward="true" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/addons/datatables.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/addons/_datatables.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/attendances/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AttendanceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="113" column="4" lean-forward="true" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/MembersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="116" column="25" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Call.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="46" column="4" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/cultures/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="57" column="59" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="7" column="72" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/_bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/attendances/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="76" column="12" lean-forward="true" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin/default.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/backend/scripts-backend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-02-13.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-1146">
+          <caret line="7" column="89" selection-end-line="141" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+        <state relative-caret-position="346">
+          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="214" column="18" lean-forward="true" selection-start-line="214" selection-start-column="18" selection-end-line="214" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="284" column="27" lean-forward="true" selection-start-line="284" selection-start-column="27" selection-end-line="284" selection-end-column="27" />
+        <state relative-caret-position="446">
+          <caret line="372" column="34" selection-start-line="372" selection-start-column="34" selection-end-line="372" selection-end-column="34" />
           <folding>
             <element signature="e#46#82#0#PHP" expanded="true" />
           </folding>

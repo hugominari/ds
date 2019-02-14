@@ -278,7 +278,7 @@ class UsersController extends Controller
 		
 		try
 		{
-			$user = User::findOrFail($id);
+			$user = User::withTrashed()->find($id);
 			$user->delete();
 			
 			// Prepare to response
@@ -291,7 +291,7 @@ class UsersController extends Controller
 		{
 			$response->message = Controller::DATABASE_ERROR;
 			$response->type = 'error';
-			Log::error($error->getMessage() . " | Linha: {$error->getLine()}");
+			Log::error($error);
 		}
 		
 		return Response::json($response);
@@ -370,7 +370,7 @@ class UsersController extends Controller
 		
 		try
 		{
-			$users = User::withTrashed()
+			$users = User::query()
                 ->select('id', 'name', 'username', 'created_at')
 				->when(!empty($self), function($query) use($self){
 					return $query->where('id', '<>', $self->id);

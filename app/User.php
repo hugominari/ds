@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Hash;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -67,6 +68,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    /**
+     * @param $value
+     */
+    public function setPasswordAttribute($value)
+    {
+        $value = (substr($value, 0, 7) == '$2y$10$' && strlen($value) > 50)
+            ? $value : Hash::make($value);
+        $this->attributes['password'] = $value;
+    }
     
     
 }

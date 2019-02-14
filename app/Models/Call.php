@@ -48,7 +48,7 @@ class Call extends \App\Models\Base\Call
     public function setDateAttribute($value)
     {
         if(!empty($value))
-            $this->attributes['date'] = Carbon::createFromFormat('d/m/Y', $value)->format('Y-m-d H:i:s');
+            $this->attributes['date'] = Carbon::createFromFormat('d/m/Y H:i:s', $value)->format('Y-m-d H:i:s');
         else
             $this->attributes['date'] = Carbon::now();
     }

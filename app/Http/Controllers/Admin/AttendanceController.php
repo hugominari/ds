@@ -59,6 +59,7 @@ class AttendanceController extends Controller
 		try
 		{
 		    $currentUser = \Auth::user();
+		    
 			$attendance = new Call();
 			$attendance->type_call_id = $request->type_call_id;
 			$attendance->user_id = $currentUser->id;
@@ -68,9 +69,62 @@ class AttendanceController extends Controller
 			$attendance->date = $request->date;
 			$attendance->save();
 			
-			$response->success = true;
+            $response->success = true;
 			$response->type = 'success';
 			$response->message = 'Atendimento registrado com sucesso!';
+            $response->title = 'Sucesso:';
+            $response->callback = 'redirect';
+            $response->url = route('attendance.index');
+            $response->time = 3000;
+		}
+		catch(\Error $error)
+		{
+			$response->message = Controller::DATABASE_ERROR;
+			$response->type = 'error';
+			Log::error($error->getMessage() . " | Linha: {$error->getLine()}");
+		}
+		
+		return Response::json($response);
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @return \Illuminate\Http\JsonResponse
+	 */
+	public function update(AttendanceRequest $request, $id)
+	{
+		$response = $this->createResult();
+		
+		try
+		{
+            $attendance = Call::findOrFail($id);
+		    $currentUser = \Auth::user();
+		    
+		    if($attendance->user_id == $currentUser->id)
+            {
+                $attendance->type_call_id = $request->type_call_id;
+                $attendance->user_id = $currentUser->id;
+                $attendance->name = $request->name;
+                $attendance->cpf = getOnlyNumbers($request->cpf);
+                $attendance->description = $request->description;
+                $attendance->date = $request->date;
+                $attendance->save();
+    
+                $response->success = true;
+                $response->type = 'success';
+                $response->message = 'Atendimento atualizado com sucesso!';
+                $response->title = 'Sucesso:';
+                $response->callback = 'redirect';
+                $response->url = route('attendance.index');
+                $response->time = 3000;
+            }
+            else
+            {
+                $response->message = 'Você pode editar somente seus atendimentos!';
+                $response->type = 'error';
+            }
 		}
 		catch(\Error $error)
 		{
@@ -101,6 +155,24 @@ class AttendanceController extends Controller
 	}
 	
 	/**
+	 * Display the specified resource.
+	 *
+	 * @param $id
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+	 */
+	public function edit($id)
+	{
+        $attendance = Call::findOrFail($id);
+
+        $data = [
+            'attendance',
+        ];
+        
+        return view("admin.attendances.edit", compact($data));
+	}
+	
+	/**
 	 * List All users.
 	 */
 	public function list(Request $request)
@@ -126,11 +198,30 @@ class AttendanceController extends Controller
                 })
 				->addColumn('action', function(Call $attendance)
 				{
-					$actions = route('attendance.show', $attendance->id);
+					// $actions = route('attendance.show', $attendance->id);
+					//
+					// return '<button type="button" class="btn btn-info float-right" href="' . $actions . '">
+                     //            <i class="fa fa-eye pr-2"></i> Ver
+                     //        </button>';
+                    //
+                    
+                    
+                    $data = $attendance;
+                    $havePermission = $this->confirmPermission(
+                        (object)[
+                            'add' => 'manter-atendimentos',
+                            'edit' => 'manter-atendimentos',
+                        ]
+                    );
+                    
+                    $actions = [
+                        'show' => route('attendance.show', $attendance->id),
+                        'edit' => route('attendance.edit', $attendance->id),
+                        'delete' => route('attendance.destroy', $attendance->id),
+                    ];
+                    
+                    return view('layouts.datatables.actions', compact(['data', 'actions', 'havePermission']))->render();
 					
-					return '<button type="button" class="btn btn-info float-right" href="' . $actions . '">
-                                <i class="fa fa-eye pr-2"></i> Ver
-                            </button>';
 				})
 				->rawColumns(['icon', 'status', 'action'])
 				->make(true);

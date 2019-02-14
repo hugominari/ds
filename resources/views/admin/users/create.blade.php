@@ -70,7 +70,16 @@
 						Permissões
 					</div>
 					<div class="card-body">
-						<h3 class="box-title">Permissões</h3>
+						<h3 class="box-title clearfix">
+							<span class="float-left">Permissões</span>
+							<div class="switch float-left ml-5">
+								<label class="font-12">
+									Marcar Todos
+									<input type="checkbox" id="toggler">
+									<span class="lever"></span> Desmarcar Todos
+								</label>
+							</div>
+						</h3>
 						<p class="p-t-15 text-muted"><i class="fa fa-info-circle"></i> As permissões são carregadas conforme o tipo de perfil selecionado.</p>
 						<div class="form-group is-empty m-t-0">
 							<input name="permissions" type="hidden" id="permissions">

@@ -423,12 +423,16 @@ Route::group(
                 );
 
                 Route::get('{id}', 'AttendanceController@show')->name('attendance.show');
+                Route::get('{id}/edit', 'AttendanceController@edit')->name(
+                    'attendance.edit'
+                );
 
         
                 Route::post('store', 'AttendanceController@store')->name(
                     'attendance.store'
                 );
-
+                Route::match(['put', 'path'], '{id?}', 'AttendanceController@update')
+                    ->name('attendance.update');
                 Route::delete('{id}', 'AttendanceController@destroy')->name(
                     'attendance.destroy'
                 );

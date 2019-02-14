@@ -42,11 +42,11 @@
         </footer>
         
         <script type="text/javascript" src="{{ asset('js/app.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('plugins/jquery-mask-plugin/jquery.mask.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('plugins/mdb/popper.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('plugins/mdb/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('plugins/mdb/mdb.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('plugins/jquery.blockUI.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('plugins/jquery-mask-plugin/jquery.mask.min.js') }}"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@7.29.0/dist/sweetalert2.all.min.js"></script>
         <script type="text/javascript" src="{{ asset('js/lib.min.js') }}"></script>
         @stack('js')
