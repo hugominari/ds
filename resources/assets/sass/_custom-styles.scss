@@ -732,8 +732,16 @@ table.dataTable tbody td {
 			background: #F7F7F7;
 		}
 	}
+	
+	.connectedSortable img
+	{
+		left: 50%;
+		margin-left: -35px !important;
+		position: absolute;
+	}
 }
 
 .obj-fit{
 	object-fit: cover;
 }
+

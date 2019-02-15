@@ -29,7 +29,6 @@
 	
 	<div class="row">
 		<div class="col-md-12">
-			
 			<div class="card">
 				<div class="card-header">
 					Configurações
@@ -67,7 +66,7 @@
 						<div id="box-members" class="col-md-12 connectedSortable" style="min-height: 30px">
 							<?php if(!empty($members)): ?>
 								<?php $__currentLoopData = $members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-									<img class="img-fluid width-72 heigth-72 float-left mx-2 my-2 z-depth-1"
+									<img class="width-72 heigth-72 float-left mx-2 my-2 z-depth-1"
 										 src="<?php echo e($member->image->url_sm); ?>" alt="<?php echo e($member->name); ?>"
 										 data-member="<?php echo e($member->id); ?>" data-container="body" data-toggle="popover"
 										 data-placement="top" data-content="<?php echo e($member->name); ?>">

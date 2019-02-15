@@ -27,7 +27,6 @@
 	
 	<div class="row">
 		<div class="col-md-12">
-			
 			<div class="card">
 				<div class="card-header">
 					Configurações
@@ -60,7 +59,7 @@
 						<div id="box-members" class="col-md-12 connectedSortable" style="min-height: 30px">
 							@if (!empty($members))
 								@foreach($members as $member)
-									<img class="img-fluid width-72 heigth-72 float-left mx-2 my-2 z-depth-1"
+									<img class="width-72 heigth-72 float-left mx-2 my-2 z-depth-1"
 										 src="{{ $member->image->url_sm }}" alt="{{ $member->name }}"
 										 data-member="{{ $member->id }}" data-container="body" data-toggle="popover"
 										 data-placement="top" data-content="{{ $member->name }}">
